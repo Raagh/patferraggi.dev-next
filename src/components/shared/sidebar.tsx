@@ -4,12 +4,6 @@ import iconSet from '../../../public/assets/landing/selection.json';
 import styles from '@/styles/Sidebar.module.css';
 import Link from 'next/link';
 
-const isMediaQuerySmallOrMedium =
-  typeof window !== `undefined`
-    ? window.matchMedia(`(max-width: 720px)`).matches ||
-      window.matchMedia(`(min-width: 720px) and (max-width: 1024px)`).matches
-    : false;
-
 const disableScrollingIfSidebarOpen = (props: any) => {
   const body = typeof document !== `undefined` ? document.getElementsByTagName('body')[0] : { style: { overflow: '' } };
 
@@ -17,8 +11,6 @@ const disableScrollingIfSidebarOpen = (props: any) => {
 };
 
 export default function Sidebar(props: any) {
-  const sidebarWidth = isMediaQuerySmallOrMedium ? '100%' : '70%';
-
   disableScrollingIfSidebarOpen(props);
 
   return (

@@ -1,0 +1,19 @@
+.introWrapper {
+  grid-area: intro;
+  font-family: var(font-family-medium);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 54px;
+  line-height: 64px;
+  letter-spacing: -2.2528px;
+  width: 80%;
+  padding-top: 1rem;
+
+  @media (max-width: 720px) {
+    padding-top: 0;
+    font-size: 1.5em;
+    line-height: 30px;
+    letter-spacing: -1.13806px;
+    width: 100%;
+  }
+}

@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Layout from '../layouts/layout';
+import Intro from '@/components/landing/intro';
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
           href="/favicon.ico"
         />
       </Head>
-      <main >INDEX BABY</main>
+      <Intro />
     </>
   );
 }
