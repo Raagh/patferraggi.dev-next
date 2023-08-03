@@ -1,7 +1,7 @@
 :root {
   --background-color: #20202c;
   --primary-color: #eaeae4;
-  --device-s: '(max-width: 720px)'; 
+  --secondary-color: #009bff;
   --font-family-medium: var(--inter-medium);
   --font-family-regular: var(--inter-regular);
 }

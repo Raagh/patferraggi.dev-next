@@ -1,9 +1,5 @@
 import Head from 'next/head';
-import { Inter } from 'next/font/google';
 import Layout from '../layouts/layout';
-
-const interRegular = Inter({ subsets: ['latin'], weight: "400", variable:"--inter-regular" })
-const interMedium = Inter({ subsets: ['latin'], weight: "500", variable:"--inter-medium" })
 
 export default function Home() {
   return (
@@ -23,7 +19,7 @@ export default function Home() {
           href="/favicon.ico"
         />
       </Head>
-      <main className={interMedium.className}>INDEX BABY</main>
+      <main >INDEX BABY</main>
     </>
   );
 }

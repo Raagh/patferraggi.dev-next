@@ -4,6 +4,7 @@ const ReactStickyHeadroom = dynamic(() => import('@integreat-app/react-sticky-he
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from '@/styles/Navbar.module.css';
+import Sidebar from './sidebar';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,6 +65,10 @@ export default function Navbar() {
             ></Image>
           </button>
         </div>
+        <Sidebar
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        ></Sidebar>
       </nav>
     </ReactStickyHeadroom>
   );
