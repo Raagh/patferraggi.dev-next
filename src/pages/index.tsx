@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Layout from '../layouts/layout';
 import Intro from '@/components/landing/intro';
+import Divider from '@/components/shared/divider';
+import BlogNews from '@/components/landing/blog-news/blog-news';
 
 export default function Home() {
   return (
@@ -21,13 +23,15 @@ export default function Home() {
         />
       </Head>
       <Intro />
+      <Divider />
+      <BlogNews />
     </>
   );
 }
 
 Home.getLayout = function getLayout(page: any) {
   return (
-    <Layout removeSidePadding="true">
+    <Layout>
       <>{page}</>
     </Layout>
   );

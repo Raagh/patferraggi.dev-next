@@ -60,8 +60,8 @@ export default function Navbar() {
               alt="burger-menu"
               id="burger-menu"
               src="/assets/landing/hamburger-menu.svg"
-              width="18"
-              height="18"
+              width="23"
+              height="10"
             ></Image>
           </button>
         </div>

@@ -38,13 +38,6 @@
   flex-direction: column;
 }
 
-.internalContainer-padded {
-  max-width: 1660px;
-  margin: auto;
-  padding: 2rem 0 2rem 0;
-  width: 100%;
-}
-
 .internalContainer {
   max-width: 1660px;
   margin: auto;

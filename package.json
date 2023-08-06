@@ -9,18 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "13.4.12",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "@integreat-app/react-sticky-headroom": "^1.2.3",
+    "icomoon-react": "^3.0.0"
+  },
+  "devDependencies": {
     "@types/node": "20.4.6",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
-    "icomoon-react": "^3.0.0",
-    "next": "13.4.12",
-    "normalize": "^0.3.1",
     "prettier": "^3.0.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
     "typescript": "5.1.6"
   }
 }
