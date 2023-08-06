@@ -6,6 +6,7 @@ import BlogNews from '@/components/landing/blog-news/blog-news';
 import About from '@/components/landing/about';
 import Gallery from '@/components/landing/gallery';
 import Contact from '@/components/landing/contact';
+import Projects from '@/components/landing/projects/projects';
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
       <About />
       <Gallery />
       <Divider />
+      <Projects />
       <Contact />
     </>
   );
