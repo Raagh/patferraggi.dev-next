@@ -3,6 +3,7 @@ import Layout from '../layouts/layout';
 import Intro from '@/components/landing/intro';
 import Divider from '@/components/shared/divider';
 import BlogNews from '@/components/landing/blog-news/blog-news';
+import About from '@/components/landing/about';
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <Intro />
       <Divider />
       <BlogNews />
+      <About />
     </>
   );
 }

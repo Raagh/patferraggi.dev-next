@@ -1,6 +1,6 @@
 .introWrapper {
   grid-area: intro;
-  font-family: var(font-family-medium);
+  font-family: var(--font-family-medium);
   font-style: normal;
   font-weight: 500;
   font-size: 54px;

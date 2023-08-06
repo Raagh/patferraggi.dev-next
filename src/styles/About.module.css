@@ -1,0 +1,64 @@
+.aboutWrapper {
+  display: flex;
+  flex-direction: row;
+  font-family: var(--font-family-medium);
+  font-style: normal;
+  color: var(--primary-color);
+  margin: 7rem 0 7rem 0;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+    margin: 2rem 0 2rem 0;
+    padding: 0.5rem;
+  }
+
+  @media (min-width: 720px) and (max-width: 1024px) {
+    margin: 4rem 0 4rem 0;
+    padding: 0.5rem;
+  }
+}
+
+.backgroundTitle {
+  font-size: 32px;
+  line-height: 64px;
+  letter-spacing: -2.2528px;
+  width: 50%;
+
+  @media (max-width: 720px) {
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -1px;
+    width: 100%;
+  }
+}
+
+.backgroundTitleBig {
+  font-size: 58px;
+
+  @media (max-width: 720px) {
+    font-size: 22px;
+    line-height: 25px;
+    letter-spacing: -1px;
+  }
+}
+
+.backgroundText {
+  padding-top: 4rem;
+  font-size: 24px;
+  line-height: 32px;
+  font-family: var(--font-family-regular);
+  width: 45%;
+
+  @media (max-width: 720px) {
+    padding-top: 1.5rem;
+    width: 100%;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: -0.513925px;
+  }
+}
+
+.textOnSecondaryColor {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
