@@ -2,30 +2,6 @@ import Image from 'next/image';
 import styles from '@/styles/Gallery.module.css';
 
 export default function Gallery() {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     allFile(
-  //       filter: {
-  //         name: { regex: "/(gallery-1)|(gallery-2)|(gallery-3)/" }
-  //         relativeDirectory: { eq: "images" }
-  //       }
-  //       sort: { fields: name }
-  //     ) {
-  //       nodes {
-  //         childImageSharp {
-  //           fluid(maxWidth: 600) {
-  //             aspectRatio
-  //             base64
-  //             sizes
-  //             src
-  //             srcSet
-  //           }
-  //         }
-  //         name
-  //       }
-  //     }
-  //   }
-  // `)
   const data = {
     allFile: {
       nodes: [

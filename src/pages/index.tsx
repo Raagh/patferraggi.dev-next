@@ -5,6 +5,7 @@ import Divider from '@/components/shared/divider';
 import BlogNews from '@/components/landing/blog-news/blog-news';
 import About from '@/components/landing/about';
 import Gallery from '@/components/landing/gallery';
+import Contact from '@/components/landing/contact';
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
       <About />
       <Gallery />
       <Divider />
+      <Contact />
     </>
   );
 }

@@ -1,0 +1,40 @@
+.contactWrapper {
+  margin-top: 8rem;
+  margin-bottom: 12rem;
+  width: 62%;
+  font-size: 54px;
+  line-height: 64px;
+  letter-spacing: -2.2528px;
+  font-family: var(--font-family-medium);
+  color: var(--primary-color);
+
+  @media (max-width: 720px) {
+    font-size: 24px;
+    line-height: 25px;
+    letter-spacing: -1px;
+    margin-top: 2rem;
+    margin-bottom: 4.5rem;
+    width: 100%;
+  }
+
+  @media (min-width: 720px) and (max-width: 1024px) {
+    margin-top: 2rem;
+    margin-bottom: 4.5rem;
+    width: 100%;
+  }
+}
+
+.contactWrapper p:nth-child(1) {
+  @media (max-width: 720px) {
+    padding-bottom: 2rem;
+  }
+
+  @media (min-width: 720px) and (max-width: 1024px) {
+    padding-bottom: 2rem;
+  }
+}
+
+.styledHeaderLink {
+  color: var(--secondary-color);
+  text-decoration: underline !important;
+}

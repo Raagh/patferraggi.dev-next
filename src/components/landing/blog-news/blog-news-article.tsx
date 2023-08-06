@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/styles/BlogNews.module.css';
 
-const RenderPreviewIfItMatters = ({ preview, shouldRenderPreview, link }) => {
+const RenderPreviewIfItMatters = ({ preview, shouldRenderPreview, link }: { preview: string, shouldRenderPreview: boolean, link: string}) => {
   return shouldRenderPreview ? (
     <Link href={link} className={styles.styledNextLink}>
       <Image
