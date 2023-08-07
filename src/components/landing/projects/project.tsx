@@ -1,30 +1,8 @@
 import Image from 'next/image';
 import styles from '@/styles/Project.module.css';
+import projectRydoo from '../../../../public/assets/landing/images/project-rydoo.png';
 
 export default function Project(props: any) {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     file: file(absolutePath: { regex: "/project-rydoo.png/" }) {
-  //       childImageSharp {
-  //         fluid {
-  //           base64
-  //           aspectRatio
-  //           sizes
-  //           src
-  //           srcSet
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-  const data = {
-    file: {
-      childImageSharp: {
-        fluid: '/assets/landing/images/project-rydoo.png'
-      },
-    },
-  };
-
   return (
     <section className={styles.projectWrapper}>
       <article className={styles.projectWrapperProject}>
@@ -48,10 +26,11 @@ export default function Project(props: any) {
       </article>
       <Image
         className={styles.projectWrapperImage}
-        src={data.file.childImageSharp.fluid}
+        src={projectRydoo}
         width={800}
         height={800}
         alt="project-example"
+        placeholder="blur"
       ></Image>
     </section>
   );
