@@ -1,4 +1,4 @@
-import styles from '@/styles/about.module.css';
+import styles from '@/styles/landing/about.module.css';
 
 export default function About() {
   return (
