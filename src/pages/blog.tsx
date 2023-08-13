@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../layouts/layout';
-import styles from '@/styles/blog/blogPage.module.css'
+import styles from '@/styles/blog/index.module.css'
+import BlogListTemplateHeader from '@/components/blog/blog-list-header';
 
 export default function Blog() {
     const { data } = {data: {allMdx: {edges: []}}};
@@ -14,6 +15,8 @@ export default function Blog() {
 
     const posts = data.allMdx.edges
 
+          // <BlogListArticlesDisplay posts={posts}></BlogListArticlesDisplay>
+        // {currentPage === 1 && <SubscribeModal></SubscribeModal>}
     return (
       <Layout>
       <Head>
@@ -32,6 +35,10 @@ export default function Blog() {
         />
       </Head>
         <section className={styles.blogListTemplateWrapper}>
+          <BlogListTemplateHeader
+            shouldDisplayMainArticle={currentPage === 1}
+          ></BlogListTemplateHeader>
+          // BlogListArticlesDisplay
         </section>
         <ul className={styles.backNextButtons}>
           {!isFirst && (
@@ -50,6 +57,7 @@ export default function Blog() {
           )}
         </ul>
         <Link className={styles.styledNextLink} href="/">← Back to my website</Link>
+        /// SUBSCRIBE MODAL
       </Layout>
   );
 }
