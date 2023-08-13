@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '@/styles/Gallery.module.css';
+import styles from '@/styles/gallery.module.css';
 import gallery1 from '../../../public/assets/landing/images/gallery-1.jpg';
 import gallery2 from '../../../public/assets/landing/images/gallery-2.jpg';
 import gallery3 from '../../../public/assets/landing/images/gallery-3.jpg';

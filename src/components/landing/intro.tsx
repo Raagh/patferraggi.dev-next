@@ -1,7 +1,7 @@
 import React from 'react';
 import iconSet from '../../../public/assets/landing/selection.json';
 import IcomoonReact from 'icomoon-react';
-import styles from '@/styles/Intro.module.css';
+import styles from '@/styles/intro.module.css';
 
 export default function Intro() {
   return (

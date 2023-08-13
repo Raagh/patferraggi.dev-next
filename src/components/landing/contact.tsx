@@ -1,6 +1,6 @@
 import iconSet from '../../../public/assets/landing/selection.json';
 import IcomoonReact from 'icomoon-react';
-import styles from '@/styles/Contact.module.css';
+import styles from '@/styles/contact.module.css';
 
 export default function Contact() {
   return (

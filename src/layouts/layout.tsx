@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google';
 const interRegular = Inter({ subsets: ['latin'], weight: "400", variable:"--font-family-regular", display: "swap" })
 const interMedium = Inter({ subsets: ['latin'], weight: "500", variable:"--font-family-medium" , display: "swap"})
 
-export default function Layout({ children }) {
+export default function Layout({ children }: { children: any[] }) {
   return (
     <div className={`${interRegular.variable} ${interMedium.variable} mainContainer`}>
       <Navbar />

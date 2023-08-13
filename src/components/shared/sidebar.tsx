@@ -1,7 +1,7 @@
 import React from 'react';
 import IcomoonReact from 'icomoon-react';
 import iconSet from '../../../public/assets/landing/selection.json';
-import styles from '@/styles/Sidebar.module.css';
+import styles from '@/styles/sidebar.module.css';
 import Link from 'next/link';
 
 const disableScrollingIfSidebarOpen = (props: any) => {

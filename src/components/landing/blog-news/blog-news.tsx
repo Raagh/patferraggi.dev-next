@@ -1,7 +1,7 @@
 import IcomoonReact from 'icomoon-react';
 import Article from './blog-news-article';
 import iconSet from '../../../../public/assets/landing/selection.json';
-import styles from '@/styles/BlogNews.module.css';
+import styles from '@/styles/blogNews.module.css';
 
 export default function BlogNews() {
   // const articles = useStaticQuery(graphql`

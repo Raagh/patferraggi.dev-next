@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 const ReactStickyHeadroom = dynamic(() => import('@integreat-app/react-sticky-headroom'), { ssr: false });
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '@/styles/Navbar.module.css';
+import styles from '@/styles/navbar.module.css';
 import Sidebar from './sidebar';
 
 export default function Navbar() {

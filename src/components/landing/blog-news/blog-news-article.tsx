@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from '@/styles/BlogNews.module.css';
+import styles from '@/styles/blogNews.module.css';
 
 const RenderPreviewIfItMatters = ({ preview, shouldRenderPreview, link }: { preview: string, shouldRenderPreview: boolean, link: string}) => {
   return shouldRenderPreview ? (

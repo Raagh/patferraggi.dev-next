@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '@/styles/Project.module.css';
+import styles from '@/styles/project.module.css';
 import projectRydoo from '../../../../public/assets/landing/images/project-rydoo.png';
 
 export default function Project(props: any) {

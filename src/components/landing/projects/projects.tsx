@@ -2,7 +2,7 @@ import React from 'react';
 import Project from './project';
 import IcomoonReact from 'icomoon-react';
 import iconSet from '../../../../public/assets/landing/selection.json';
-import styles from '@/styles/Project.module.css';
+import styles from '@/styles/project.module.css';
 
 const projects = [
   {
