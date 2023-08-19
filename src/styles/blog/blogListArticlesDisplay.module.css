@@ -1,0 +1,123 @@
+.blogListArticleWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+  }
+}
+
+.blogListArticleWrapperPadded {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 2rem 0 2rem;
+
+  @media (max-width: 720px) {
+    flex-direction: column;
+  }
+}
+
+.blogListArticle {
+  width: 25%;
+  min-height: 100%;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 720px) {
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 720px) and (max-width: 1024px) {
+    width: 50%;
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    width: 33%;
+    margin-top: 2rem;
+  }
+}
+
+.blogListArticleTitle {
+  margin-top: 1.5rem;
+  width: 70%;
+  min-height: 100px;
+  font-family: var(--font-family-medium);
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -1px;
+
+  @media (max-width: 720px) {
+    width: 100%;
+    min-height: 80px;
+  }
+}
+
+.blogListArticleDate {
+  margin-top: auto;
+  min-height: 45px;
+  opacity: 0.5;
+  font-family: var(--font-family-medium);
+  font-size: 14px;
+  line-height: 32px;
+}
+
+.styledLink {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.styledLink:hover {
+  color: var(--secondary-color);
+}
+
+.styledDescription {
+  font-size: 18px;
+  line-height: 32px;
+  opacity: 0.8;
+  margin-top: 1rem;
+  font-family: var(--font-family-medium);
+
+  @media (max-width: 720px) {
+    line-height: 20px;
+  }
+
+  @media (min-width: 720px) and (max-width: 1024px) {
+    line-height: 20px;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    line-height: 20px;
+  }
+}
+
+.styledImage {
+  height: 210px;
+  width: 90%;
+  object-fit: cover;
+
+  @media (max-width: 720px) {
+    height: 100%;
+    width: 100%;
+    max-height: 130px;
+  }
+
+  @media (min-width: 720px) and (max-width: 1024px) {
+    height: 100%;
+    width: 90%;
+    max-height: 130px;
+  }
+
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    height: 100%;
+    width: 90%;
+    max-height: 119px;
+  }
+}
