@@ -4,63 +4,8 @@ import Link from 'next/link';
 import styles from '@/styles/blog/blogListHeader.module.css';
 
 export default function BlogListHeader(props: any) {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //     allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 1) {
-  //       edges {
-  //         node {
-  //           excerpt
-  //           timeToRead
-  //           fields {
-  //             slug
-  //           }
-  //           frontmatter {
-  //             date(formatString: "DD MMMM YYYY", locale: "es")
-  //             title
-  //             description
-  //             thumbnail {
-  //               childImageSharp {
-  //                 fluid {
-  //                   ...GatsbyImageSharpFluid
-  //                 }
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
-  const data = {
-    allMdx: {
-      edges: [
-        {
-          node: {
-            fields: { slug: '/slug' },
-            excerpt: 'Hola chicos, ¿cómo han estado? ¿yo? He estado trabajando mucho en un nuevo proyecto que estoy construyendo con la ayuda de un amigo, no…',
-            timeToRead: 4,
-            frontmatter: {
-              title: 'Una semana con Nest.js, ¿está bueno?',
-              description: '',
-              date: '20 marzo 2021',
-              thumbnail: {
-                childImageSharp: {
-                  fluid: { src: '/assets/landing/blog-article-mock.jpg' },
-                },
-              },
-            },
-          },
-        },
-      ],
-    },
-  };
 
-  const mainPost = data.allMdx.edges[0].node;
+  const {mainPost} = props;
 
   return (
     <section className={styles.blogListTemplateHeader}>
@@ -86,11 +31,11 @@ export default function BlogListHeader(props: any) {
             <h3 className={styles.blogListMainArticleTitle}>
               <Link
                 className={styles.styledLinkMainArticle}
-                href={`blog${mainPost.fields.slug}`}
+                href={`blog${mainPost.slug}`}
               >
-                {mainPost.frontmatter.title || mainPost.fields.slug}
+                {mainPost.data.title || mainPost.slug}
               </Link>
-              <div className={styles.styledDescription}>{mainPost.frontmatter.description}</div>
+              <div className={styles.styledDescription}>{mainPost.data.description}</div>
             </h3>
             <div
               className={styles.blogListMainArticleExcerpt}
@@ -99,12 +44,12 @@ export default function BlogListHeader(props: any) {
               }}
             ></div>
             <small className={styles.blogListMainArticleDate}>
-              {mainPost.frontmatter.date} - {mainPost.timeToRead + 1} minutos de lectura
+              {mainPost.data.date} - {mainPost.timeToRead + 1} minutos de lectura
             </small>
           </div>
           <Link
             className={styles.styledLinkMainArticle}
-            href={`blog${mainPost.fields.slug}`}
+            href={`blog${mainPost.data.slug}`}
           ></Link>
           <div className={styles.styledImageContainer}>
             <Image
@@ -112,7 +57,7 @@ export default function BlogListHeader(props: any) {
               className={styles.styledImage}
               width={800}
               height={800}
-              src={mainPost.frontmatter.thumbnail.childImageSharp.fluid.src}
+              // src={mainPost.data.thumbnail}
             ></Image>
           </div>
         </article>

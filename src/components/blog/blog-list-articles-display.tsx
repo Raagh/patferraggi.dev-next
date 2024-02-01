@@ -6,21 +6,21 @@ export default function BlogListArticlesDisplay(props: any) {
   const posts = props.posts;
   return (
     <section className={props.sidePadding ? styles.blogListArticleWrapperPadded : styles.blogListArticleWrapper}>
-      {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug;
+      {posts.map(({ data }) => {
+        const title = data.title || data.slug;
         return (
           <article
             className={styles.blogListArticle}
-            key={node.fields.slug}
+            key={data.slug}
           >
             <Link
               className={styles.styledLink}
-              href={`blog${node.fields.slug}`}
+              href={`blog${data.slug}`}
             >
               <Image
                 className={styles.styledImage}
                 alt="article"
-                src={node.frontmatter.thumbnail.childImageSharp.fluid.src}
+                // src={data.thumbnail}
                 width={800}
                 height={800}
               />
@@ -29,14 +29,14 @@ export default function BlogListArticlesDisplay(props: any) {
             <h3 className={styles.blogListArticleTitle}>
               <Link
                 className={styles.styledLink}
-                href={`blog${node.fields.slug}`}
+                href={`blog/${data.slug}`}
               >
                 {title}
               </Link>
             </h3>
-            <div className={styles.styledDescription}>{node.frontmatter.description}</div>
+            <div className={styles.styledDescription}>{data.description}</div>
             <small className={styles.blogListArticleDate}>
-              {node.frontmatter.date} - {node.timeToRead + 1} minutos de lectura
+              {data.date} - {data.timeToRead + 1} minutos de lectura
             </small>
           </article>
         );
