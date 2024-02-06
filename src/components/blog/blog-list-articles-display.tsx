@@ -20,7 +20,7 @@ export default function BlogListArticlesDisplay(props: any) {
               <Image
                 className={styles.styledImage}
                 alt="article"
-                // src={data.thumbnail}
+                src={data.thumbnail}
                 width={800}
                 height={800}
               />

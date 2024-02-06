@@ -22,30 +22,55 @@ export function getPostSlugs() {
 }
 
 export function getPostBySlug(slugPath: string) {
-  const slugParts = slugPath.split('/');
-  const year = slugParts[0];
-  const month = slugParts[1];
-  const slug = slugParts[2];
   const fullPath = join(postsDirectory, slugPath, 'index.md');
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
   const wordsPerMinute = 225;
   const timeToRead = Math.ceil(wordCounter(fileContents) / wordsPerMinute);
 
-  console.log(timeToRead);
-
   const { data, content } = matter(fileContents);
 
-  return { data: { slug: slugPath, timeToRead, ...data }, content };
+  const thumbnail = join('/assets/blog/', slugPath, data.thumbnail);
+
+  return { data: { slug: slugPath, timeToRead, ...data, thumbnail }, content };
 }
 
-export function getAllPosts() {
+export function getAllPosts(page: number = 1) {
   const slugs = getPostSlugs();
   const posts = slugs.map(slug => getPostBySlug(slug));
-  // sort posts by date in descending order
-  // .sort((post1, post2) => (post1.data.date > post2.data.date ? -1 : 1));
-  //
-  return JSON.parse(JSON.stringify(posts));
+  const sortedPosts = posts.sort((a: any, b: any) => {
+    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+  });
+
+  const postsPerPage = 8;
+  const numPages = Math.ceil(posts.length / postsPerPage);
+
+  const chunks = [];
+  for (let i = 0; i < sortedPosts.length; i += postsPerPage) {
+    const chunk = sortedPosts.slice(i, i + postsPerPage);
+    chunks.push(chunk);
+  }
+
+  return JSON.parse(JSON.stringify({ posts: chunks[page - 1], numPages}));
+}
+
+export function getPageNumbers() {
+  const slugs = getPostSlugs();
+  const posts = slugs.map(slug => getPostBySlug(slug));
+  const sortedPosts = posts.sort((a: any, b: any) => {
+    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+  });
+
+  const postsPerPage = 8;
+  const numPages = Math.ceil(posts.length / postsPerPage);
+
+  const chunks = [];
+  for (let i = 0; i < sortedPosts.length; i += postsPerPage) {
+    const chunk = sortedPosts.slice(i, i + postsPerPage);
+    chunks.push(chunk);
+  }
+
+  return JSON.parse(JSON.stringify({numPages}));
 }
 
 function wordCounter(input: string) {

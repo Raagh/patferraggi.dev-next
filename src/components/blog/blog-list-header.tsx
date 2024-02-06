@@ -31,7 +31,7 @@ export default function BlogListHeader(props: any) {
             <h3 className={styles.blogListMainArticleTitle}>
               <Link
                 className={styles.styledLinkMainArticle}
-                href={`blog${mainPost.slug}`}
+                href={`blog/${mainPost.data.slug}`}
               >
                 {mainPost.data.title || mainPost.slug}
               </Link>
@@ -57,7 +57,7 @@ export default function BlogListHeader(props: any) {
               className={styles.styledImage}
               width={800}
               height={800}
-              // src={mainPost.data.thumbnail}
+              src={mainPost.data.thumbnail}
             ></Image>
           </div>
         </article>
