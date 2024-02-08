@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 
 const postsDirectory = join(process.cwd(), '_posts');
 
-export function getPostSlugs() {
+function getPostSlugs() {
   const years = fs.readdirSync(postsDirectory);
   const totalSlugs = [];
   for (let i = 0; i < years.length; i++) {

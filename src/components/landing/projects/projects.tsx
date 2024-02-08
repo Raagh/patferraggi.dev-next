@@ -4,6 +4,7 @@ import IcomoonReact from 'icomoon-react';
 import iconSet from '../../../../public/assets/landing/selection.json';
 import styles from '@/styles/landing/project.module.css';
 
+//TODO: update projects
 const projects = [
   {
     name: 'Rydoo',

@@ -1,13 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Layout from '../../layouts/layout';
+import Layout from '../../../layouts/layout';
 import styles from '@/styles/blog/index.module.css';
 import BlogListTemplateHeader from '@/components/blog/blog-list-header';
 import BlogListArticlesDisplay from '@/components/blog/blog-list-articles-display';
 import { getAllPosts, getPageNumbers } from '@/lib/blog';
 
 export default function Blog({ posts, currentPage, numPages }) {
-  console.log(currentPage);
   const isFirst = currentPage === 1;
   const isLast = currentPage === numPages;
   const prevPage = currentPage - 1 === 1 ? '/blog/' : '/blog/' + (currentPage - 1).toString();
@@ -75,27 +74,27 @@ export default function Blog({ posts, currentPage, numPages }) {
   );
 }
 
-export async function getStaticPaths() {
-  const { numPages } = getPageNumbers();
+// export async function getStaticPaths() {
+//   const { numPages } = getPageNumbers();
+//
+//   const arr = Array.from({ length: numPages }, (_, i) => (i + 1).toString());
+//
+//   return {
+//     paths: arr.map(x => {
+//       return {
+//         params: {
+//           pageNumber: x.toString()
+//         },
+//       };
+//     }),
+//     fallback: false,
+//   };
+// }
 
-  const arr = Array.from({ length: numPages }, (_, i) => i + 1);
+export const getServerSideProps = async ({ params }: { params: { pageNumber: number } }) => {
+  const { posts, numPages } = getAllPosts(params.pageNumber ?? 1);
 
   return {
-    paths: arr.map(x => {
-      return {
-        params: {
-          pageNumber: x.toString()
-        },
-      };
-    }),
-    fallback: false,
-  };
-}
-
-export const getStaticProps = async ({ params }: { params: { pageNumber: number }}) => {
-  const { posts, numPages } = getAllPosts(params.pageNumber);
-
-  return {
-    props: { posts, currentPage: params.pageNumber, numPages },
+    props: { posts, currentPage: params.pageNumber ?? 1, numPages },
   };
 };
