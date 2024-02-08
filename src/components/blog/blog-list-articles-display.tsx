@@ -29,7 +29,7 @@ export default function BlogListArticlesDisplay(props: any) {
             <h3 className={styles.blogListArticleTitle}>
               <Link
                 className={styles.styledLink}
-                href={`blog/${data.slug}`}
+                href={`${data.slug}`}
               >
                 {title}
               </Link>

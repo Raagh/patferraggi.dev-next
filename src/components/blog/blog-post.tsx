@@ -1,0 +1,112 @@
+import Link from 'next/link';
+import Head from 'next/head';
+import Image from 'next/image';
+import Divider from '../shared/divider';
+import BlogListArticlesDisplay from './blog-list-articles-display';
+import Bio from './bio';
+// import NewsLetter from './newsletter';
+import Layout from '@/layouts/layout';
+import styles from '@/styles/blog/blogPost.module.css';
+import { remark } from 'remark';
+import html from 'remark-html';
+
+export default function BlogPost({ post, posts }) {
+  // componentDidMount() {
+  //   const twttr = window.twttr;
+  //   if (typeof twttr.widgets !== 'undefined') {
+  //     twttr.widgets.load();
+  //   }
+  // }
+
+  // let disqusConfig = {
+  //   identifier: post.id,
+  //   title: post.title,
+  // };
+
+  return (
+    <Layout removeSidePadding={true}>
+      <section className={styles.articleWrapper}>
+        <Head>
+          <title>{post.title}</title>
+          <meta
+            name="description"
+            content="Personal Website and Blog"
+          />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+          />
+          <link
+            rel="icon"
+            href="/favicon.ico"
+          />
+        </Head>
+        <Link
+          className={styles.styledHomeLink}
+          href="/blog"
+        >
+          ← Back to my blog
+        </Link>
+        <h2 className={styles.articleTitle}>{post.data.title}</h2>
+        <div className={styles.ArticleDescription}>{post.data.description}</div>
+        <span className={styles.articleDate}>
+          {post.data.date} - {post.data.timeToRead + 1} minutos de lectura
+        </span>
+        <Divider
+          margin={'3.5rem 2rem 3.5rem 2rem'}
+          small={true}
+          maxWidth={'1260px'}
+        ></Divider>
+        <section className={styles.articleEntireContent}>
+          <article className={styles.coverContent}>
+            <Image
+              alt="Cover Image"
+              className={styles.styledCoverImage}
+              width={800}
+              height={800}
+              src={post.data.thumbnail}
+            ></Image>
+          </article>
+          <article className={styles.articleContent}>
+            <article className={styles.articleContentText}>
+              <article
+                // className={styles.articleContentText}
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
+              {/*<MDXRenderer>{post.body}</MDXRenderer> */}
+              <Divider
+                small={true}
+                maxWidth={'44.5rem'}
+                // color={globalStyles.backgroundColor}
+              ></Divider>
+              {/*<Bio></Bio> */}
+              <Divider
+                small={true}
+                maxWidth={'44.5rem'}
+                // color={globalStyles.backgroundColor}
+              ></Divider>
+
+              {/*<CommentCount config={disqusConfig} /> */}
+
+              {/*<Disqus config={disqusConfig} /> */}
+            </article>
+          </article>
+        </section>
+
+        {/* <NewsLetter enableMargin={true}></NewsLetter> */}
+      </section>
+      {posts.length > 0 && <p className={styles.blogPostShowcaseWrapperTitle}>Más artículos</p>}
+
+      <BlogListArticlesDisplay
+        sidePadding={true}
+        posts={posts}
+      ></BlogListArticlesDisplay>
+      <Link
+        className={styles.styledHomeLink}
+        href="/blog"
+      >
+        ← Back to my blog
+      </Link>
+    </Layout>
+  );
+}

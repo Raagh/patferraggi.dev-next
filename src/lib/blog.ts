@@ -1,6 +1,8 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
+import { remark } from 'remark';
+import html from 'remark-html';
 
 const postsDirectory = join(process.cwd(), '_posts');
 
@@ -21,7 +23,7 @@ function getPostSlugs() {
   return totalSlugs;
 }
 
-export function getPostBySlug(slugPath: string) {
+export async function getPostBySlug(slugPath: string) {
   const fullPath = join(postsDirectory, slugPath, 'index.md');
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
@@ -32,12 +34,19 @@ export function getPostBySlug(slugPath: string) {
 
   const thumbnail = join('/assets/blog/', slugPath, data.thumbnail);
 
-  return { data: { slug: slugPath, timeToRead, ...data, thumbnail }, content };
+  const processedContent = await remark().use(html).process(content);
+
+  const contentHtml = processedContent.toString();
+
+  return {
+    ...JSON.parse(JSON.stringify({ data: { slug: slugPath, timeToRead, ...data, thumbnail } })),
+    ...{ content: contentHtml },
+  };
 }
 
-export function getAllPosts(page: number = 1) {
+export async function getAllPosts(page: number = 1) {
   const slugs = getPostSlugs();
-  const posts = slugs.map(slug => getPostBySlug(slug));
+  const posts = await Promise.all(slugs.map(slug => getPostBySlug(slug)));
   const sortedPosts = posts.sort((a: any, b: any) => {
     return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
   });
@@ -51,12 +60,12 @@ export function getAllPosts(page: number = 1) {
     chunks.push(chunk);
   }
 
-  return JSON.parse(JSON.stringify({ posts: chunks[page - 1], numPages}));
+  return JSON.parse(JSON.stringify({ posts: chunks[page - 1], numPages }));
 }
 
-export function getPageNumbers() {
+export async function getPageNumbers() {
   const slugs = getPostSlugs();
-  const posts = slugs.map(slug => getPostBySlug(slug));
+  const posts = await Promise.all(slugs.map(slug => getPostBySlug(slug)));
   const sortedPosts = posts.sort((a: any, b: any) => {
     return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
   });
@@ -70,7 +79,7 @@ export function getPageNumbers() {
     chunks.push(chunk);
   }
 
-  return JSON.parse(JSON.stringify({numPages}));
+  return JSON.parse(JSON.stringify({ numPages }));
 }
 
 function wordCounter(input: string) {
