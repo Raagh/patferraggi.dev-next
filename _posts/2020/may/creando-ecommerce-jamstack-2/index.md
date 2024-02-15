@@ -96,7 +96,7 @@ export default {
 
 Como puedes ver aquí, **definimos todas las propiedades que tendrá un producto en nuestro Sanity Studio. Nombre, precio, stock e imagen**, incluso el icono del menú usa 'react-icons' que viene por defecto con Sanity. Nuestro Studio se ve así:
 
-![Product Sanity](./product.png)
+![Product Sanity](/product.png)
 
 La interfaz de usuario es súper simple y fácil de usar, **con nuestro esquema definido podemos crear múltiples productos y almacenarlos en Sanity**, en los siguientes artículos recuperaremos la lista de productos para mostrar nuestro catálogo en nuestro sitio web.
 
@@ -151,7 +151,7 @@ export const urlFor = (source: SanityImageSource) => builder.image(source).url()
 
 Después de algunos estilos para que tenga el tamaño adecuado, nuestra página se ve así:
 
-![página después de cargar el producto](./producto-result.png)
+![página después de cargar el producto](/producto-result.png)
 
 Muy bien, ¿verdad? **el cliente de Sanity incluso tiene algunas funciones y propiedades que puedes usar para crear imágenes con el tamaño correcto sobre la marcha**, probablemente tendremos que lidiar con eso en los siguientes artículos.
 
@@ -287,7 +287,7 @@ const Index = (product: Product) => {
 
 ¿Y cuando hacemos clic en el botón en la pantalla? Voilà
 
-![Enlace de MercadoPago](./mercadopago.png)
+![Enlace de MercadoPago](/mercadopago.png)
 
 En los siguientes artículos, crearemos componentes reales y comenzaremos a construir la interfaz de usuario para nuestro sitio web.
 

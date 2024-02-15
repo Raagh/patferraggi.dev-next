@@ -14,7 +14,7 @@ thumbnail: ./cover.jpeg
 Si has estado siguiendo mis últimos artículos, probablemente sepas que he estado tratando de aprender programación funcional.
 Al principio, estaba tratando de aprender `Haskell` leyendo este [libro](https://haskellbook.com/), aprendiendo Category Theory de este [libro](https://github.com/hmemcpy/milewski-ctfp-pdf/) e incluso tratando de construir un [Juego de la viborita](<https://en.wikipedia.org/wiki/Snake_(video_game_genre)>) en `Haskell`
 
-![Snake Game in Haskell](./haskell-snake.jpeg)
+![Snake Game in Haskell](/haskell-snake.jpeg)
 
 Es justo decir que era miserable, estaba progresando muy poco y enfrentando cantidades increíbles de frustración, fue entonces cuando me di cuenta de que el problema era que estaba tratando de abordar demasiadas cosas a la vez.
 
@@ -50,7 +50,7 @@ Perdón por la larga presentación, quería explicar qué guió mis decisiones y
 
 En esta primera parte de la serie, intentaremos construir los 3 elementos básicos del juego: el mapa, la serpiente (representado por `X` 's), la manzana (representado por `O`) y mostrarlos en la consola . Entonces obtendremos algo como esto:
 
-![Final result](./final-result.png)
+![Final result](/final-result.png)
 
 ## Los fundamentos, un punto.
 
@@ -192,7 +192,7 @@ const display = (rows, columns, state) => {
 display(15, 15, Snake.initialState)
 ```
 
-![Final result](./final-result.png)
+![Final result](/final-result.png)
 
 ## Conclusiones
 

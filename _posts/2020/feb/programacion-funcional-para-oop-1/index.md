@@ -11,7 +11,7 @@ thumbnail: ./cover.png
 
 Hola amigos!, ¿cuanto tiempo no?. Les pido mil disculpas si estuve ausente un tiempo y se quedaron con ganas de seguir aprendiendo programación funcional. O puede que estes pensando, ¿Otra vez escribiendo sobre programacional funcional?
 
-![NotGoingToHappen](./not_going_to_happen.jpg)
+![NotGoingToHappen](/not_going_to_happen.jpg)
 
 Me encontraba trabajando muy duro en el re-diseño del sitio, espero que les guste.
 
@@ -190,6 +190,6 @@ En los próximos tutoriales seguiremos agregando nuevas herramientas a nuestro c
 
 Por el momento, puedes estar orgulloso de ti mismo, si utilizas estos conocimientos básicos en tu dia a dia, ya estarás haciendo Programación Funcional.
 
-![whatifFunctional](./what_if_functional.jpg)
+![whatifFunctional](/what_if_functional.jpg)
 
 Si te gusto este artículo, o si no te gusto, te pido que me lo hagas saber en los comentarios abajo. Si te quedaron dudas por favor tambien asi podemos dejar todo bien claro antes de pasar al siguiente tema.

@@ -23,7 +23,7 @@ En este artículo, mencionaré algunas cosas que los empleadores olvidan y que p
 
 Al revisar candidatos potenciales, y tengo que decir que yo mismo he sido culpable de esto, nos centramos demasiado en los conocimientos que la persona tiene en ese preciso momento. El problema con esto es que en nuestra industria hay una cantidad increíble de cosas nuevas que salen todos los días, por lo que **es imposible saberlo todo**. Aunque la tecnología cambie constantemente, las ideas y fundamentos no lo hacen. Las ideas se reinventan, se vuelven a empaquetar y se revenden con un nuevo sombrero.
 
-![New hat](./newhat.jpeg)
+![New hat](/newhat.jpeg)
 
 **La realidad es que si tienes cierta experiencia con una serie de tecnologías, puedes adaptarte rápidamente a las demás**. ¿Sabes Angular? Eso es increíble, pero ¿Qué tan difícil puede ser comenzar a hacer Vue? Después de un mes trabajando con Vue a diario durante 8 horas seguidas, probablemente te sientas como en casa.
 

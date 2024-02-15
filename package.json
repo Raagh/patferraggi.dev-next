@@ -11,12 +11,15 @@
   },
   "dependencies": {
     "@integreat-app/react-sticky-headroom": "^1.2.3",
+    "@types/react-syntax-highlighter": "^15.5.11",
     "gray-matter": "^4.0.3",
     "icomoon-react": "^3.0.0",
     "next": "13.4.12",
     "next-seo": "^6.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-markdown": "^9.0.1",
+    "react-syntax-highlighter": "^15.5.0",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1"
   },

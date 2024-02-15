@@ -66,7 +66,7 @@ _Si tenemos dos funciones: f(x) y g(x), de modo que el dominio de la 2ª esté i
 
 ![Composition](https://thepracticaldev.s3.amazonaws.com/i/ylybung2c6yxypxpfoe6.png)
 
-![Woah Slow Down](./despacio.gif)
+![Woah Slow Down](/despacio.gif)
 
 Esto significa que si tenemos una función que toma un _INT_ y devuelve un _BOOL_, y tenemos una segunda función que toma un _BOOL_ y devuelve un _STRING_, entonces por definición también tenemos una tercera función que toma un _INT_ y devuelve un _STRING_, debido a la regla de composición de funciones. Veamos un ejemplo:
 

@@ -19,7 +19,7 @@ Hemos estado trabajando muy duro y haciendo un buen progreso en algunos fundamen
 
 Cada sitio web debe tener una página de inicio, por suerte para nosotros, nuestro equipo de diseño nos proporcionó diseños muy pulidos usando Figma que nos permitió verificar todo más rápido y estar siempre sincronizados. Se ve algo como esto:
 
-![Página de inicio](./design.png)
+![Página de inicio](/design.png)
 
 Adjuntos a este diseño, los primeros requisitos comenzaron a aparecer.
 
@@ -165,8 +165,8 @@ export default () =>
 
 Con esto obtenemos el siguiente resultado:
 
-![Texto alternativo](./settings2.png)
-![Texto alternativo](./settings.png)
+![Texto alternativo](/settings2.png)
+![Texto alternativo](/settings.png)
 
 Como puedes ver, **obtenemos una interfaz de usuario agradable con la capacidad de configurar todos los datos que queremos que use nuestro sitio, manteniendo un modelo separado para nuestros productos**. Esto también se ocupa del hecho de que solo podemos definir una configuración, no hay forma de crear un documento de inicio adicional.
 
@@ -248,7 +248,7 @@ src={getImageAsset(asset).metadata.lqip}
 
 ¿No me digas que no fue fácil? Veamos el resultado:
 
-![página de inicio borroneada](./blur.png)
+![página de inicio borroneada](/blur.png)
 
 No se tu pero estoy super contento con el resultado &#128512;
 

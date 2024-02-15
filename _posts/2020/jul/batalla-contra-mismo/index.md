@@ -44,7 +44,7 @@ La vida humana es lidiar con el conflicto, sucederán muchas cosas hasta tu últ
 
 Mañana te despertarás como un hombre mejor, limpiando el dolor y enfocándote en lo que está frente a ti. Es hora de volver al ring.
 
-![get up](./get-up.jpg)
+![get up](/get-up.jpg)
 
 ---
 

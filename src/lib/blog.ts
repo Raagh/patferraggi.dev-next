@@ -34,12 +34,23 @@ export async function getPostBySlug(slugPath: string) {
 
   const thumbnail = join('/assets/blog/', slugPath, data.thumbnail);
 
-  const processedContent = await remark().use(html).process(content);
+  const processedContent = await remark().process(content);
 
   const contentHtml = processedContent.toString();
 
   return {
-    ...JSON.parse(JSON.stringify({ data: { slug: slugPath, timeToRead, ...data, thumbnail } })),
+    ...JSON.parse(
+      JSON.stringify({
+        data: {
+          slug: slugPath,
+          timeToRead,
+          ...data,
+          date: new Date(data.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }),
+          rawDate: data.date,
+          thumbnail,
+        },
+      })
+    ),
     ...{ content: contentHtml },
   };
 }
@@ -48,7 +59,7 @@ export async function getAllPosts(page: number = 1) {
   const slugs = getPostSlugs();
   const posts = await Promise.all(slugs.map(slug => getPostBySlug(slug)));
   const sortedPosts = posts.sort((a: any, b: any) => {
-    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+    return new Date(b.data.rawDate).getTime() - new Date(a.data.rawDate).getTime();
   });
 
   const postsPerPage = 8;
@@ -67,7 +78,7 @@ export async function getPageNumbers() {
   const slugs = getPostSlugs();
   const posts = await Promise.all(slugs.map(slug => getPostBySlug(slug)));
   const sortedPosts = posts.sort((a: any, b: any) => {
-    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+    return new Date(b.data.rawDate).getTime() - new Date(a.data.rawDate).getTime();
   });
 
   const postsPerPage = 8;

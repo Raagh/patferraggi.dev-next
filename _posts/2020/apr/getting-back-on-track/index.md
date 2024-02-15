@@ -51,14 +51,14 @@ El impulso es clave, sabía que todo lo que necesitaba para volver al caballo er
 
 Un objetivo clave para mí en este asunto fue aprender de él. En lugar de centrarme estrictamente en cosas relacionadas a la programación, quiero darme un descanso de vez en cuando, así que en el futuro, no me estresare y simplemente relajarse como una parte regular de mi rutina. Entonces planeé mi calendario:
 
-![Calendario](./calendar.png)
+![Calendario](/calendar.png)
 
 ¿Te das cuenta de que los primeros 2 días de la semana no hay nada? Me costaba mucho dejar de jugar, no hice ejercicio ni escribi mi progreso. Pero hoy, miércoles, decidí que no era así como quería pasar mi tiempo, me encantan los juegos y voy a seguir jugando, pero también haré otras cosas que disfruto.
 Planeé algunas cosas para mi semana, como continuar aprendiendo _Programación funcional y Category theory_, hacer _Pair Programming_ con un amigo y escribir algunos artículos. Si has visto mi artículo original sobre planificación, sabrás que la semana parece bastante vacía de acuerdo con mis estándares habituales, bueno, no quiero esforzarme demasiado, por ahora, quiero seguir jugando de vez en cuando, así que dejé bastantes espacios vacíos para pasar tiempo con mi esposa o jugar con algunos amigos.
 
 Pero la clave fue comenzar de nuevo a hacer cosas, sé que esto suena obvio, pero en realidad, es todo lo que necesitas hacer, lentamente comenzar a hacer cosas de nuevo, algo de ejercicio aquí y allá, un artículo, una línea de código a la vez, hasta que vuelvas a tu rutina.
 
-![Lebuff](./lebuff.jpg)
+![Lebuff](/lebuff.jpg)
 
 Así que hoy me desperté, me cambié e hice ejercicio (incluyendo meditación), trabajé durante el día y ahora me ves aquí escribiendo esta publicación de mi blog. Si tengo algo de tiempo después de hacer esto (escribir tanto en español como en inglés toma bastante tiempo), voy a leer algunas páginas de un nuevo libro sobre _Estoicismo_ que recibí hoy y luego continuaré subiendo de nivel a ese invocador/necromancer y disfrutando un juego de rol basado en turnos.
 

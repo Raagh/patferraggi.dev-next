@@ -29,7 +29,7 @@ La estrategia permite que el algoritmo varíe independientemente de los clientes
 
 ¿Como se ve esto?
 
-![Texto alternativo](./strategy.png)
+![Texto alternativo](/strategy.png)
 
 En los lenguajes de programación orientada a objetos, esto generalmente implica clases separadas para cada estrategia y todas implementan una interfaz común, luego otra clase hace uso de la interfaz de estrategia sin saber realmente qué implementación de estrategia se ha seleccionado en tiempo de ejecución, con esto separamos las responsabilidades de seleccionar el algoritmo y las diferencias en la implementación entre estrategias teniendo la posibilidad de seleccionar una u otra durante el tiempo de ejecución.
 
@@ -128,7 +128,7 @@ En FP, este es un patrón muy utilizado en forma de `Callbacks`, `Events` y `Obs
 
 Me referiré a una respuesta a "¿Qué son las Callback?" en Stack Overflow.
 
-![Devolución de llamada](./callback.png)
+![Devolución de llamada](/callback.png)
 
 ### Singleton Pattern
 

@@ -34,7 +34,7 @@ TDD es un método para dejar que tus tests guíen el diseño de tu software, de 
 
 > Este ciclo básico se conoce como Red Green Refactor o Rojo Verde Reorganizar.
 
-![Red Green Refactor](./red-green-refactor.jpg)
+![Red Green Refactor](/red-green-refactor.jpg)
 
 Ahora que entendemos el proceso básico veamos esos momentos en los que me enamoré:
 

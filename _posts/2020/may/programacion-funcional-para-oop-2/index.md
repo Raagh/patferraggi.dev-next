@@ -72,7 +72,7 @@ Nuevamente, comencemos con la definición formal:
 
 Espera, ¿que? 🤯
 
-![Recursion](./recursion.gif)
+![Recursion](/recursion.gif)
 
 En términos prácticos básicos, esto **significa que una función se llamará a sí misma hasta que finalice el proceso y pueda terminar sin problemas**. Quizás te estés preguntando, ¿por qué demonios querríamos hacer eso? Teniendo en cuenta lo que aprendimos sobre la inmutabilidad, echemos un vistazo a este ejemplo. Queremos imprimir los números del 0 al 999 en la consola:
 

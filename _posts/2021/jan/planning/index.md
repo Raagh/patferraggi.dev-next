@@ -53,7 +53,7 @@ Comencé el año con una nueva posición, un nuevo trabajo como desarrollador de
 
 El año pasado escribí muchos blog posts, incluso algunas que me colocaron en la parte superior de la lista en comunidades increíbles como CodeNewbie, pero incluso asi no estoy conforme.
 
-![CodeNewbie 100k](./code.jpg)
+![CodeNewbie 100k](/code.jpg)
 
 Empecé fuerte pero al final, la búsqueda de un nuevo trabajo y mis otros objetivos se interpusieron. Este año mi objetivo es tener menos cosas en las que concentrarme, ¡pero hacerlas con el máximo esfuerzo !.
 

@@ -54,7 +54,7 @@ export const getServerSideProps = async ({ params }: { params: { pageNumber: num
   if (isArray(params.pageNumber) && (params.pageNumber as string[]).includes('assets'))
     return { props: { posts: [], currentPage: 0, pageNumber: 0, isArticle: false } };
 
-  const isArticle = isArray(params.pageNumber);
+  const isArticle = isArray(params.pageNumber) && params.pageNumber.length > 1;
   if (isArticle) {
     const post = await getPostBySlug((params.pageNumber as string[]).filter(x => x !== 'blog').join('/'));
     return { props: { posts: [post], currentPage: 0, pageNumber: 0, isArticle } };

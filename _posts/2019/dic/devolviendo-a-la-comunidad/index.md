@@ -9,7 +9,7 @@ Después de años trabajando como desarrollador, sigo sorprendido de la falta de
 Pasamos días enteros trabajando en Inglés, leyendo documentation, usando tutoriales, hasta nuestro lenguajes de programación están en Inglés.
 Se imaginan si un if fuese así?
 
-![FalsoIf](./falsoIf.png)
+![FalsoIf](/falsoIf.png)
 
 No fue hasta hace unos meses cuando empecé a realmente valorar la suerte que tengo de saber inglés, no solo porque puedo entender las herramientas, cursos, documentación,
 sino porque puedo trabajar perfectamente con gente de muchas nacionalidades, buscar ayuda y aprender. Darme cuenta de esto también me hizo darme cuenta que hay gente que no es tan afortunada,

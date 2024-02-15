@@ -3,12 +3,15 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Divider from '../shared/divider';
 import BlogListArticlesDisplay from './blog-list-articles-display';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import Bio from './bio';
 // import NewsLetter from './newsletter';
 import Layout from '@/layouts/layout';
 import styles from '@/styles/blog/blogPost.module.css';
 import { remark } from 'remark';
 import html from 'remark-html';
+import Markdown from 'react-markdown';
 
 export default function BlogPost({ post, posts }) {
   // componentDidMount() {
@@ -70,10 +73,82 @@ export default function BlogPost({ post, posts }) {
           <article className={styles.articleContent}>
             <article className={styles.articleContentText}>
               <article
-                // className={styles.articleContentText}
-                dangerouslySetInnerHTML={{ __html: post.content }}
+              // className={styles.articleContentText}
+              // dangerouslySetInnerHTML={{ __html: post.content }}
               />
-              {/*<MDXRenderer>{post.body}</MDXRenderer> */}
+              <Markdown
+                components={{
+                  img: props => (
+                    <Image
+                      src={props.src}
+                      alt={props.alt}
+                      width={1200}
+                      height={200}
+                    />
+                  ),
+                  p: ({ node, children }) => {
+                    if (node?.children[0]?.tagName === 'img') {
+                      const image: any = node.children[0];
+                      console.log(image.properties.src);
+                      /// TODO: REMOVER EL PUNTO
+                      //
+                      if (image.properties.src.startsWith('https')) {
+                        return (
+                          <img
+                            src={image.properties.src}
+                            alt={image.properties.alt}
+                          />
+                        );
+                      }
+                      return (
+                        <div className="image">
+                          <Image
+                            src={`/assets/blog/${post.data.slug}${image.properties.src}`}
+                            alt={image.properties.alt}
+                            width="600"
+                            height="300"
+                          />
+                        </div>
+                      );
+                    }
+                    // Return default child if it's not an image
+                    return <p>{children}</p>;
+                  },
+                  code({ inline, className, children, ...props }: any) {
+                    const match = /language-(\w+)/.exec(className ?? '');
+
+                    if (inline) {
+                      return (
+                        <code
+                          {...props}
+                          className="inline-code"
+                        >
+                          {children}
+                        </code>
+                      );
+                    }
+
+                    return match ? (
+                      <SyntaxHighlighter
+                        language={match[1]}
+                        style={oneDark}
+                        PreTag="div"
+                        children={String(children).replace(/\n$/, '')}
+                        {...props}
+                      />
+                    ) : (
+                      <code
+                        className={className}
+                        {...props}
+                      >
+                        {children}
+                      </code>
+                    );
+                  },
+                }}
+              >
+                {post.content}
+              </Markdown>
               <Divider
                 small={true}
                 maxWidth={'44.5rem'}
