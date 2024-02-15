@@ -36,7 +36,7 @@ export default function BlogListArticlesDisplay(props: any) {
             </h3>
             <div className={styles.styledDescription}>{data.description}</div>
             <small className={styles.blogListArticleDate}>
-              {data.date} - {data.timeToRead + 1} minutos de lectura
+              {data.date} - {data.timeToRead} minutos de lectura
             </small>
           </article>
         );

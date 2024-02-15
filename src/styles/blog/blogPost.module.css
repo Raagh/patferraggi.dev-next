@@ -3,6 +3,7 @@
 }
 
 .articleTitle {
+  font-family: var(--font-family-medium);
   font-size: 54px;
   line-height: 64px;
   letter-spacing: -1px;
@@ -30,6 +31,7 @@
 
 .articleDate {
   font-size: 14px;
+  font-family: var(--font-family-medium);
   line-height: 32px;
   opacity: 0.5;
   padding-right: 2rem;
@@ -66,7 +68,7 @@
   }
 }
 
-.styledCoverImage {
+.styledCover {
   width: 90%;
   margin: auto;
   height: 475px;
@@ -75,6 +77,12 @@
     width: 100%;
     height: 100%;
   }
+}
+
+.styledCoverImage {
+  width:100%;
+  height:100%;
+  object-position: center center !important;
   object-fit: contain !important;
 }
 

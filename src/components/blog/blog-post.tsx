@@ -9,9 +9,8 @@ import Bio from './bio';
 // import NewsLetter from './newsletter';
 import Layout from '@/layouts/layout';
 import styles from '@/styles/blog/blogPost.module.css';
-import { remark } from 'remark';
-import html from 'remark-html';
 import Markdown from 'react-markdown';
+import { useEffect } from 'react';
 
 export default function BlogPost({ post, posts }) {
   // componentDidMount() {
@@ -25,7 +24,13 @@ export default function BlogPost({ post, posts }) {
   //   identifier: post.id,
   //   title: post.title,
   // };
-
+  //
+  useEffect(() => {
+    const s = document.createElement('script');
+    s.setAttribute('src', 'https://platform.twitter.com/widgets.js');
+    s.setAttribute('async', 'true');
+    document.head.appendChild(s);
+  }, []);
   return (
     <Layout removeSidePadding={true}>
       <section className={styles.articleWrapper}>
@@ -53,7 +58,7 @@ export default function BlogPost({ post, posts }) {
         <h2 className={styles.articleTitle}>{post.data.title}</h2>
         <div className={styles.ArticleDescription}>{post.data.description}</div>
         <span className={styles.articleDate}>
-          {post.data.date} - {post.data.timeToRead + 1} minutos de lectura
+          {post.data.date} - {post.data.timeToRead} minutos de lectura
         </span>
         <Divider
           margin={'3.5rem 2rem 3.5rem 2rem'}
@@ -62,28 +67,27 @@ export default function BlogPost({ post, posts }) {
         ></Divider>
         <section className={styles.articleEntireContent}>
           <article className={styles.coverContent}>
-            <Image
-              alt="Cover Image"
-              className={styles.styledCoverImage}
-              width={800}
-              height={800}
-              src={post.data.thumbnail}
-            ></Image>
+            <div className={styles.styledCover}>
+              <Image
+                alt="Cover Image"
+                className={styles.styledCoverImage}
+                width={800}
+                height={800}
+                src={post.data.thumbnail}
+              ></Image>
+            </div>
           </article>
           <article className={styles.articleContent}>
             <article className={styles.articleContentText}>
-              <article
-              // className={styles.articleContentText}
-              // dangerouslySetInnerHTML={{ __html: post.content }}
-              />
+              <article />
               <Markdown
                 components={{
                   img: props => (
                     <Image
                       src={props.src}
                       alt={props.alt}
-                      width={1200}
-                      height={200}
+                      width={800}
+                      height={800}
                     />
                   ),
                   p: ({ node, children }) => {
@@ -152,13 +156,13 @@ export default function BlogPost({ post, posts }) {
               <Divider
                 small={true}
                 maxWidth={'44.5rem'}
-                // color={globalStyles.backgroundColor}
+                color={ '#20202c'}
               ></Divider>
-              {/*<Bio></Bio> */}
+              <Bio />
               <Divider
                 small={true}
                 maxWidth={'44.5rem'}
-                // color={globalStyles.backgroundColor}
+                color={ '#20202c'}
               ></Divider>
 
               {/*<CommentCount config={disqusConfig} /> */}

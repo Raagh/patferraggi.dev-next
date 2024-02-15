@@ -15,15 +15,21 @@ export default function Navbar() {
         className={styles.navbarContainer}
         id="navbar-container"
       >
-        <Link href="/">
-          {' '}
-          <img
+        <a
+          href="/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ padding: '0 2rem 0 0' }}
+        >
+          <Image
             id="logo"
             alt="logo"
+            width={136}
+            height={65}
             className={`${styles.logoWrapper}`}
-            src="./assets/landing/logo.svg"
-          ></img>
-        </Link>
+            src="/assets/landing/logo.svg"
+          ></Image>
+        </a>
 
         <div className={`${styles.navbarIconsContainer}`}>
           <a

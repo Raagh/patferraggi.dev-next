@@ -6,6 +6,7 @@ import styles from '@/styles/blog/blogListHeader.module.css';
 export default function BlogListHeader(props: any) {
 
   const {mainPost} = props;
+  console.log(mainPost);
 
   return (
     <section className={styles.blogListTemplateHeader}>
@@ -33,18 +34,18 @@ export default function BlogListHeader(props: any) {
                 className={styles.styledLinkMainArticle}
                 href={`blog/${mainPost.data.slug}`}
               >
-                {mainPost.data.title || mainPost.slug}
+                {mainPost.data.title || mainPost.data.slug}
               </Link>
               <div className={styles.styledDescription}>{mainPost.data.description}</div>
             </h3>
             <div
               className={styles.blogListMainArticleExcerpt}
               dangerouslySetInnerHTML={{
-                __html: mainPost.excerpt,
+                __html: mainPost.content.replace(/<[^>]*>?/gm, '').substring(0, 135) + '...',
               }}
             ></div>
             <small className={styles.blogListMainArticleDate}>
-              {mainPost.data.date} - {mainPost.timeToRead + 1} minutos de lectura
+              {mainPost.data.date} - {mainPost.data.timeToRead} minutos de lectura
             </small>
           </div>
           <Link
