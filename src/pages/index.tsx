@@ -7,8 +7,9 @@ import About from '@/components/landing/about';
 import Gallery from '@/components/landing/gallery';
 import Contact from '@/components/landing/contact';
 import Projects from '@/components/landing/projects/projects';
+import { getAllPosts } from '@/lib/blog';
 
-export default function Home() {
+export default function Home({ posts }) {
   return (
     <>
       <Head>
@@ -28,7 +29,7 @@ export default function Home() {
       </Head>
       <Intro />
       <Divider />
-      <BlogNews />
+      <BlogNews posts={posts} />
       <About />
       <Gallery />
       <Divider />
@@ -44,4 +45,10 @@ Home.getLayout = function getLayout(page: any) {
       <>{page}</>
     </Layout>
   );
+};
+
+export const getStaticProps = async () => {
+  const { posts } = await getAllPosts();
+
+  return { props: { posts: [posts[0], posts[1]] } };
 };

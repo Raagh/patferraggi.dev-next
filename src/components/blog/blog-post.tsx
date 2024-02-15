@@ -93,7 +93,6 @@ export default function BlogPost({ post, posts }) {
                   p: ({ node, children }) => {
                     if (node?.children[0]?.tagName === 'img') {
                       const image: any = node.children[0];
-                      console.log(image.properties.src);
                       /// TODO: REMOVER EL PUNTO
                       //
                       if (image.properties.src.startsWith('https')) {

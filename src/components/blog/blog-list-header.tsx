@@ -6,7 +6,6 @@ import styles from '@/styles/blog/blogListHeader.module.css';
 export default function BlogListHeader(props: any) {
 
   const {mainPost} = props;
-  console.log(mainPost);
 
   return (
     <section className={styles.blogListTemplateHeader}>

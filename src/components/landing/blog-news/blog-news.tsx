@@ -3,76 +3,7 @@ import Article from './blog-news-article';
 import iconSet from '../../../../public/assets/landing/selection.json';
 import styles from '@/styles/landing/blogNews.module.css';
 
-export default function BlogNews() {
-  // const articles = useStaticQuery(graphql`
-  //   query {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //     allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 2) {
-  //       edges {
-  //         node {
-  //           excerpt
-  //           fields {
-  //             slug
-  //           }
-  //           frontmatter {
-  //             date(formatString: "DD MMMM YYYY", locale: "es")
-  //             title
-  //             description
-  //             enTitle
-  //             enDescription
-  //             enPostUrl
-  //             thumbnail {
-  //               childImageSharp {
-  //                 fluid {
-  //                   ...GatsbyImageSharpFluid
-  //                 }
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `).allMdx.edges
-  const articles = [
-    {
-      node: {
-        frontmatter: {
-          title: 'Una semana con Nest.js, ¿está bueno?',
-          date: '29 marzo 2021',
-          enTitle: 'One week with Nest.js, is it good?',
-          enPostUrl: 'randomUrl to dev.to',
-          thumbnail: {
-            childImageSharp: { fluid: '/assets/landing/blog-article-mock.jpg' },
-          },
-        },
-        fields: {
-          slug: '/link to local',
-        },
-      },
-    },
-    {
-      node: {
-        frontmatter: {
-          title: 'Nuevo portátil, nuevo sistema operativo. Mi aventura en Linux comienza aquí.',
-          date: '29 marzo 2021',
-          enTitle: 'New laptop, new OS. My adventure going Linux starts here.',
-          enPostUrl: 'randomUrl to dev.to',
-          thumbnail: {
-            childImageSharp: { fluid: '/assets/landing/blog-article-mock.jpg' },
-          },
-        },
-        fields: {
-          slug: '/link to local',
-        },
-      },
-    },
-  ];
-
+export default function BlogNews({posts}) {
   return (
     <section
       className={styles.blogNewsWrapper}
@@ -115,22 +46,21 @@ export default function BlogNews() {
         </div>
       </header>
       <section className={styles.blogNewsArticles}>
-        {articles.map((item, index) => {
-          const node = item.node;
+        {posts.map((post, index) => {
           return (
             <Article
               key={index}
               id={index}
-              title={node.frontmatter.title}
-              link={`/blog` + node.fields.slug}
+              title={post.data.title}
+              link={`/blog` + post.data.slug}
               showPreview={index === 0}
               small={index !== 0}
-              creationDate={node.frontmatter.date}
-              description={node.frontmatter.description}
-              enTitle={node.frontmatter.enTitle}
-              enDescription={node.frontmatter.enDescription}
-              enPostUrl={node.frontmatter.enPostUrl}
-              thumbnail={node.frontmatter.thumbnail}
+              creationDate={post.data.date}
+              description={post.data.description}
+              enTitle={post.data.enTitle}
+              enDescription={post.data.enDescription}
+              enPostUrl={post.data.enPostUrl}
+              thumbnail={post.data.thumbnail}
             />
           );
         })}

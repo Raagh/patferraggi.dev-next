@@ -21,7 +21,7 @@ export default function BlogNewsArticle(props: any) {
     <article className={props.small ? styles.articleWrapperSmall : styles.articleWrapper}>
       <RenderPreviewIfItMatters
         shouldRenderPreview={props.showPreview}
-        preview={props.thumbnail.childImageSharp.fluid}
+        preview={props.thumbnail}
         link={props.link}
       ></RenderPreviewIfItMatters>
       <div className={styles.articleTextContainer}>
@@ -33,7 +33,7 @@ export default function BlogNewsArticle(props: any) {
           >
             {props.title}
           </a>
-          <div>{props.description}</div>
+          <div className={styles.styledDescription}>{props.description}</div>
           <a
             className={styles.enArticleLink}
             target="_blank"
