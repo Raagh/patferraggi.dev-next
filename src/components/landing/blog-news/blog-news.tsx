@@ -52,7 +52,7 @@ export default function BlogNews({posts}) {
               key={index}
               id={index}
               title={post.data.title}
-              link={`/blog` + post.data.slug}
+              link={`/blog/` + post.data.slug}
               showPreview={index === 0}
               small={index !== 0}
               creationDate={post.data.date}

@@ -6,25 +6,19 @@ import BlogListArticlesDisplay from './blog-list-articles-display';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import Bio from './bio';
-// import NewsLetter from './newsletter';
+import NewsLetter from './newsletter';
+import {CommentCount, DiscussionEmbed} from 'disqus-react';
 import Layout from '@/layouts/layout';
 import styles from '@/styles/blog/blogPost.module.css';
 import Markdown from 'react-markdown';
 import { useEffect } from 'react';
 
 export default function BlogPost({ post, posts }) {
-  // componentDidMount() {
-  //   const twttr = window.twttr;
-  //   if (typeof twttr.widgets !== 'undefined') {
-  //     twttr.widgets.load();
-  //   }
-  // }
+  let disqusConfig = {
+    identifier: post.data.id,
+    title: post.data.title,
+  };
 
-  // let disqusConfig = {
-  //   identifier: post.id,
-  //   title: post.title,
-  // };
-  //
   useEffect(() => {
     const s = document.createElement('script');
     s.setAttribute('src', 'https://platform.twitter.com/widgets.js');
@@ -84,17 +78,15 @@ export default function BlogPost({ post, posts }) {
                 components={{
                   img: props => (
                     <Image
-                      src={props.src}
-                      alt={props.alt}
+                      src={props.src ?? ''}
+                      alt={props.alt ?? ''}
                       width={800}
                       height={800}
                     />
                   ),
                   p: ({ node, children }) => {
-                    if (node?.children[0]?.tagName === 'img') {
-                      const image: any = node.children[0];
-                      /// TODO: REMOVER EL PUNTO
-                      //
+                    if ((node?.children[0] as any)?.tagName === 'img') {
+                      const image: any = node?.children[0];
                       if (image.properties.src.startsWith('https')) {
                         return (
                           <img
@@ -164,9 +156,9 @@ export default function BlogPost({ post, posts }) {
                 color={ '#20202c'}
               ></Divider>
 
-              {/*<CommentCount config={disqusConfig} /> */}
+              <CommentCount shortname='patferraggi' config={disqusConfig} /> 
 
-              {/*<Disqus config={disqusConfig} /> */}
+              <DiscussionEmbed shortname='patferraggi' config={disqusConfig} />
             </article>
           </article>
         </section>

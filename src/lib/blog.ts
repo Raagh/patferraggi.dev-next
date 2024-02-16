@@ -37,11 +37,14 @@ export async function getPostBySlug(slugPath: string) {
   const processedContent = await remark().process(content);
 
   const contentHtml = processedContent.toString();
+  const split = slugPath.split('/');
+  const id = split[split.length - 1].replace(/\.md$/, '');
 
   return {
     ...JSON.parse(
       JSON.stringify({
         data: {
+          id,
           slug: slugPath,
           timeToRead,
           ...data,
