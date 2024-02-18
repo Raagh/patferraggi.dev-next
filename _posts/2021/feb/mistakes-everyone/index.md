@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2021-02-02"
 title: Los errores vienen tanto para los Junior como para los Senior
+disqusId: 42988273-4a7e-5183-b84a-caf02b7bb6d0
 description:
 enTitle: Mistakes come for Juniors and Seniors alike
 enDescription:

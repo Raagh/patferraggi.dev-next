@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2021-03-29"
 title: Una semana con Nest.js, ¿está bueno?
+disqusId: ce9358b7-5430-502b-a6ba-6b5caaf50f37
 description:
 enTitle: One week with Nest.js, is it good?
 enDescription:

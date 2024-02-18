@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-07-29"
 title: ¿Los principios SOLID se aplican a la programación funcional?
+disqusId: 7ed586a8-58a1-5abb-91cb-2b779e124d7a
 description:
 enTitle: Do the SOLID principles apply to Functional Programming?
 enDescription:

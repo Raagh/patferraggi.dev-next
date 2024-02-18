@@ -1,6 +1,7 @@
 ---
 path: "{{year}}/{{month}}/{{slug}}/index"
 title: 5 libros que todo programador deberia leer y algunos extras
+disqusId: e9659012-3a5c-507a-a2b2-e7299cf29bd9
 date: "2019-11-02"
 thumbnail: ./cover.jpeg
 ---

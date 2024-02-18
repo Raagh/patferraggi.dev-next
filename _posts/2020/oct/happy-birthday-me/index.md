@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-10-08"
 title: ¡Feliz cumpleaños como desarrollador para mí!
+disqusId: 8d3003ef-5dbe-5488-bfcf-7a373e3da524
 description:
 enTitle: Happy Developer Birthday to me!
 enDescription:

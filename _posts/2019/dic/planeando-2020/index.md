@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 title: Como planeo mi desarrollo personal para 2020, aprendiendo del 2019
 date: "2019-12-31"
+disqusId: 2a7145db-64aa-5577-adf2-649c8a52df9c
 thumbnail: ./2020.jpg
 ---
 

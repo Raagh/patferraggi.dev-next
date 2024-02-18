@@ -3,6 +3,7 @@ path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-08-25"
 title: Creando un microservicio con C#, .NET Core y MongoDB
 description: Parte 1
+disqusId: 4105d041-1aed-5570-8ba4-1bd598418362
 enTitle: Building a microservice with C#, .NET Core and MongoDB
 enDescription: Part 1
 enPostUrl: https://dev.to/patferraggi/building-a-microservice-with-c-net-core-and-mongodb-part-1-28ca

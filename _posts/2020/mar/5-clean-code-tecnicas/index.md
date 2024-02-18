@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-03-09"
 title: 5 técnicas de Clean Code que puedes comenzar a aplicar hoy mismo
+disqusId: 2fe5a704-6a2f-5667-bf60-592735347721
 description:
 enTitle: 5 Clean Code techniques you can start doing today
 enDescription:

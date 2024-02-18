@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-06-11"
 title: Creando una Aplicación de E-commerce con el JAMstack
+disqusId: 748fb601-f099-55eb-9b20-f5551c1ca477
 description: Parte 3
 enTitle: Let's build a custom e-commerce with the JAMstack
 enDescription: Part 3

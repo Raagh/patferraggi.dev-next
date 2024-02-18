@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-04-21"
 title: Nunca es demasiado tarde para cambiar de carrera
+disqusId: 6f8fc03b-ed23-582f-8190-9985e934165c
 description:
 enTitle: It is never too late to change careers
 enDescription:

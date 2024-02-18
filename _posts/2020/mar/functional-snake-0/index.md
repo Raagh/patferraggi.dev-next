@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-03-25"
 title: Crea un juego de la serpiente en JavaScript funcional
+disqusId: 83349795-7730-5e88-a6a6-ee9f0b2d4500
 description: Parte 0
 enTitle: Build a Snake Game in functional JavaScript
 enDescription: Part 0

@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-04-08"
 title: 4 cosas que debes saber si quieres ser desarrollador
+disqusId: 9a9d132e-e8e9-57d3-810c-e3bd9f537973
 description:
 enTitle: 4 things you need to know if you want to be a developer
 enDescription:

@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2021-02-24"
 title: Hay otros como tu ahi afuera
+disqusId: 2260020b-0a61-5a75-8fcc-3f143c67fc61
 description:
 enTitle: There are others like you out there
 enDescription:

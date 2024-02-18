@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2021-01-19"
 title: Planificando el desarrollo de mi carrera para 2021
+disqusId: 1e4863b6-6517-5b7a-a826-9132c3b2f5e0
 description:
 enTitle: Planning my career development for 2021
 enDescription:

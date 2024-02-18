@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-03-21"
 title: No sufras la cuarentena, sé mejor a causa de ella
+disqusId: e77740ba-3920-591f-b27a-e07cfbb1d705 
 description:
 enTitle: Don't suffer quarantine, be better because of it
 enDescription:

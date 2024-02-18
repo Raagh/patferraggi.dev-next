@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-01-14"
 title: Programación funcional para el desarrollador orientado a objetos
+disqusId: 0ee11ad1-bbee-598e-a5bf-10616fcfe58d
 description: Parte 0
 thumbnail: ./cover.png
 ---

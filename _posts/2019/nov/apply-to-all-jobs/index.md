@@ -1,6 +1,7 @@
 ---
 path: "{{year}}/{{month}}/{{slug}}/index"
 title: Aplica a todos los trabajos, los avisos no son realistas de todas maneras
+disqusId: 7fc70416-ff15-563d-9146-b83e73891821
 date: "2019-11-16"
 thumbnail: ./cover.jpeg
 ---

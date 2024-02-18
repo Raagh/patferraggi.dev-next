@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-04-01"
 title: ¿Jugar o Programar? Volviendo a la carrera
+disqusId: 0e65ea0d-ba90-5794-ba0e-5de0696feb57
 description:
 enTitle: Gaming or Coding? Getting back on track
 enDescription:

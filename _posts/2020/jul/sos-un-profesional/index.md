@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-07-15"
 title: ¿Estás seguro de que eres un desarrollador profesional?
+disqusId: c7d0521f-e8c6-5293-b14b-1ef9359039c4
 description:
 enTitle: Are you sure you are a professional developer?
 enDescription:

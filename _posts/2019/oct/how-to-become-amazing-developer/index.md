@@ -1,6 +1,7 @@
 ---
 path: "{{year}}/{{month}}/{{slug}}/index"
 title: Cómo volverse un excelente programador, cosas me hubiera gustado saber cuando empecé
+disqusId: 8689bb1a-dac1-5cb1-920c-5bab03c5ee02
 date: "2019-10-27"
 description: ""
 thumbnail: ./cover.jpg

@@ -1,6 +1,7 @@
 ---
 path: "{{year}}/{{month}}/{{slug}}/index"
 title: Estudio deliberado, tomando el control de nuestra carrera
+disqusId: 8a6776b4-5c8c-50f1-99ab-1e34dd7dec27
 date: "2019-12-01"
 thumbnail: ./cover.jpg
 ---

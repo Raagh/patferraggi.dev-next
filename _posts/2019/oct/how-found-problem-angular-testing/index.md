@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 title: Como encontré un problema con el Testing en Angular y decidí solucionarlo yo mismo
 date: "2019-10-26"
+disqusId: 7d8658ed-7978-5417-ab7d-cd572962eaf2
 description: ""
 thumbnail: ./cover.jpeg
 ---

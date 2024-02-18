@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 title: Devolviendo a la comunidad
 date: "2019-12-14"
+disqusId: 70339fbf-7bb9-519b-8e11-f4502ead7353
 thumbnail: ./cover.png
 ---
 

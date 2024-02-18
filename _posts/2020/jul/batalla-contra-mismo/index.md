@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-07-09"
 title: Ganar una batalla contra ti mismo
+disqusId: a64a0f32-cfb2-5567-859d-03de57a3319f
 description:
 enTitle: Winning a battle against yourself
 enDescription:

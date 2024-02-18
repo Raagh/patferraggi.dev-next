@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-03-14"
 title: El noble arte del refactoring
+disqusId: 886c6ec9-c881-5f70-a017-a6712b23f9e4
 description: Parte 0
 enTitle: The noble art of refactoring
 enDescription: Part 0

@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-03-01"
 title: Filosofía antigua para el programador moderno
+disqusId: 68d25e47-d34e-5af3-8fbf-f8c802c85fd2
 description:
 enTitle: Ancient Philosophy for the Modern Developer
 enDescription:

@@ -2,6 +2,7 @@
 path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2021-03-24"
 title: Nuevo portátil, nuevo sistema operativo. Mi aventura en Linux comienza aquí.
+disqusId: ef93c9c4-3195-540e-862f-2573eca81a20
 description:
 enTitle: New laptop, new OS. My adventure going Linux starts here.
 enDescription:

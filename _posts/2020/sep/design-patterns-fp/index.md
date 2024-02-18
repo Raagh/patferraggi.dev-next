@@ -3,6 +3,7 @@ path: "{{year}}/{{month}}/{{slug}}/index"
 date: "2020-09-06"
 title: ¿Necesitas patrones de diseño en la programación funcional?
 description:
+disqusId: dc77eb12-874e-5521-94ad-8a7547aa4ce4
 enTitle: Do you need Design Patterns in Functional Programming?
 enDescription:
 enPostUrl: https://dev.to/patferraggi/do-you-need-design-patterns-in-functional-programming-370c
