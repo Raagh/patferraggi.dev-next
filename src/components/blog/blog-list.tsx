@@ -4,6 +4,7 @@ import Layout from '../../layouts/layout';
 import styles from '@/styles/blog/index.module.css';
 import BlogListTemplateHeader from '@/components/blog/blog-list-header';
 import BlogListArticlesDisplay from '@/components/blog/blog-list-articles-display';
+import { SubscribeModal } from './subscribe-modal';
 
 export default function BlogList({ posts, currentPage, numPages }) {
   const isFirst = currentPage === 1;
@@ -13,7 +14,6 @@ export default function BlogList({ posts, currentPage, numPages }) {
 
   const [mainPost, ...restOfPosts] = posts;
 
-  // {currentPage === 1 && <SubscribeModal></SubscribeModal>}
   return (
     <Layout>
       <Head>
@@ -36,7 +36,9 @@ export default function BlogList({ posts, currentPage, numPages }) {
           mainPost={mainPost}
           shouldDisplayMainArticle={currentPage === 1}
         ></BlogListTemplateHeader>
-        <BlogListArticlesDisplay posts={restOfPosts}></BlogListArticlesDisplay>
+        <BlogListArticlesDisplay
+          posts={currentPage !== 1 ? [mainPost, ...restOfPosts] : restOfPosts}
+        ></BlogListArticlesDisplay>
       </section>
       <ul className={styles.backNextButtons}>
         {!isFirst && (
@@ -68,7 +70,7 @@ export default function BlogList({ posts, currentPage, numPages }) {
       >
         ← Back to my website
       </Link>
-      /// SUBSCRIBE MODAL
+      {currentPage === 1 && <SubscribeModal></SubscribeModal>}
     </Layout>
   );
 }

@@ -38,7 +38,7 @@ export async function getPostBySlug(slugPath: string) {
 
   const contentHtml = processedContent.toString();
   const split = slugPath.split('/');
-  const id = split[split.length - 1].replace(/\.md$/, '');
+  const id = data.disqusId ?? split[split.length - 1].replace(/\.md$/, '');
 
   return {
     ...JSON.parse(
@@ -65,7 +65,7 @@ export async function getAllPosts(page: number = 1) {
     return new Date(b.data.rawDate).getTime() - new Date(a.data.rawDate).getTime();
   });
 
-  const postsPerPage = 8;
+  const postsPerPage = page === 1 ? 9 : 8;
   const numPages = Math.ceil(posts.length / postsPerPage);
 
   const chunks = [];

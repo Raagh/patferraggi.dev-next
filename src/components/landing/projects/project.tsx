@@ -21,7 +21,7 @@ export default function Project(props: any) {
           rel="noopener noreferrer nofollow"
           style={{ marginTop: 'auto', paddingTop: '2rem' }}
         >
-          → See project
+         → See project
         </a>
       </article>
       <Image

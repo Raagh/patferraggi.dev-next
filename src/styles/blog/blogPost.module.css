@@ -121,6 +121,7 @@
   opacity: 0.8;
   padding-right: 2rem;
   padding-left: 2rem;
+  font-family: var(--font-family-medium);
 
   @media (max-width: 720px) {
     line-height: 20px;

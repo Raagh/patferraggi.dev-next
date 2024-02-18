@@ -15,10 +15,8 @@ export default function Navbar() {
         className={styles.navbarContainer}
         id="navbar-container"
       >
-        <a
+        <Link
           href="/"
-          target="_blank"
-          rel="noopener noreferrer"
           style={{ padding: '0 2rem 0 0' }}
         >
           <Image
@@ -29,7 +27,7 @@ export default function Navbar() {
             className={`${styles.logoWrapper}`}
             src="/assets/landing/logo.svg"
           ></Image>
-        </a>
+        </Link>
 
         <div className={`${styles.navbarIconsContainer}`}>
           <a

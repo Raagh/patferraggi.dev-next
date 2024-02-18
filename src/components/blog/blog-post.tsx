@@ -7,17 +7,19 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import Bio from './bio';
 import NewsLetter from './newsletter';
-import {CommentCount, DiscussionEmbed} from 'disqus-react';
+import { CommentCount, DiscussionEmbed } from 'disqus-react';
 import Layout from '@/layouts/layout';
 import styles from '@/styles/blog/blogPost.module.css';
 import Markdown from 'react-markdown';
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 
 export default function BlogPost({ post, posts }) {
-  let disqusConfig = {
-    identifier: post.data.id,
-    title: post.data.title,
-  };
+  const disqusConfig = useMemo(() => {
+    return {
+      identifier: post.data.id,
+      title: post.data.title,
+    };
+  }, [post]);
 
   useEffect(() => {
     const s = document.createElement('script');
@@ -50,7 +52,7 @@ export default function BlogPost({ post, posts }) {
           ← Back to my blog
         </Link>
         <h2 className={styles.articleTitle}>{post.data.title}</h2>
-        <div className={styles.ArticleDescription}>{post.data.description}</div>
+        <div className={styles.articleDescription}>{post.data.description}</div>
         <span className={styles.articleDate}>
           {post.data.date} - {post.data.timeToRead} minutos de lectura
         </span>
@@ -147,23 +149,25 @@ export default function BlogPost({ post, posts }) {
               <Divider
                 small={true}
                 maxWidth={'44.5rem'}
-                color={ '#20202c'}
+                color={'#20202c'}
               ></Divider>
               <Bio />
               <Divider
                 small={true}
                 maxWidth={'44.5rem'}
-                color={ '#20202c'}
+                color={'#20202c'}
               ></Divider>
 
-              <CommentCount shortname='patferraggi' config={disqusConfig} /> 
-
-              <DiscussionEmbed shortname='patferraggi' config={disqusConfig} />
+              <DiscussionEmbed
+                shortname="patferraggi"
+                config={disqusConfig}
+              />
             </article>
           </article>
         </section>
 
-        {/* <NewsLetter enableMargin={true}></NewsLetter> */}
+        <NewsLetter enableMargin={true}></NewsLetter> 
+
       </section>
       {posts.length > 0 && <p className={styles.blogPostShowcaseWrapperTitle}>Más artículos</p>}
 
