@@ -16,6 +16,11 @@ the original blog under [this repository](https://github.com/Raagh/patferraggi.d
 - Comments support using [Disqus](https://disqus.com/)
 - Mailing list support using [Mailchimp](https://mailchimp.com/)
 
+# MISSING
+- [] Generate blog posts as static content
+- [] Add RSS Feed
+- [] Check mailchimp
+
 ## Deploy Status
 
--- NOT DEPLOYED YET --
+Test URL: https://patferraggi-dev.vercel.app/
