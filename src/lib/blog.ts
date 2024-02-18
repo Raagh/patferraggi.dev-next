@@ -2,13 +2,12 @@ import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
-import html from 'remark-html';
 
 const postsDirectory = join(process.cwd(), '_posts');
 
 function getPostSlugs() {
   const years = fs.readdirSync(postsDirectory);
-  const totalSlugs = [];
+  const totalSlugs:string[] = [];
   for (let i = 0; i < years.length; i++) {
     const year = years[i];
     const months = fs.readdirSync(join(postsDirectory, year));
@@ -68,7 +67,7 @@ export async function getAllPosts(page: number = 1) {
   const postsPerPage = page === 1 ? 9 : 8;
   const numPages = Math.ceil(posts.length / postsPerPage);
 
-  const chunks = [];
+  const chunks: string[][] = [];
   for (let i = 0; i < sortedPosts.length; i += postsPerPage) {
     const chunk = sortedPosts.slice(i, i + postsPerPage);
     chunks.push(chunk);
@@ -87,7 +86,7 @@ export async function getPageNumbers() {
   const postsPerPage = 8;
   const numPages = Math.ceil(posts.length / postsPerPage);
 
-  const chunks = [];
+  const chunks: string[][] = [];
   for (let i = 0; i < sortedPosts.length; i += postsPerPage) {
     const chunk = sortedPosts.slice(i, i + postsPerPage);
     chunks.push(chunk);

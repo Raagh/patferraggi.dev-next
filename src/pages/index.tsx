@@ -43,6 +43,7 @@ Home.getLayout = function getLayout(page: any) {
   return (
     <Layout>
       <>{page}</>
+      <></>
     </Layout>
   );
 };

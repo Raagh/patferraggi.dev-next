@@ -6,7 +6,7 @@ export default function BlogListArticlesDisplay(props: any) {
   const posts = props.posts;
   return (
     <section className={props.sidePadding ? styles.blogListArticleWrapperPadded : styles.blogListArticleWrapper}>
-      {posts.map(({ data }) => {
+      {posts.map(({ data } : any) => {
         const title = data.title || data.slug;
         return (
           <article
