@@ -3,6 +3,7 @@ import IcomoonReact from 'icomoon-react';
 import iconSet from '../../../public/assets/landing/selection.json';
 import styles from '@/styles/sidebar.module.css';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const disableScrollingIfSidebarOpen = (props: any) => {
   const body = typeof document !== `undefined` ? document.getElementsByTagName('body')[0] : { style: { overflow: '' } };
@@ -20,8 +21,6 @@ export default function Sidebar(props: any) {
           <Link
             href="/blog/"
             key="blog"
-            target="_blank"
-            rel="noopener noreferrer"
             className={styles.styledLink}
           >
             blog en <span className={styles.styledLinkText}>*español*</span>
@@ -103,12 +102,12 @@ export default function Sidebar(props: any) {
         onClick={() => props.setIsOpen(false)}
         id="exit"
       >
-        <img
+        <Image
           className={styles.closeButton}
           alt="close-button"
           id="close-button"
           src="/assets/landing/close.svg"
-        ></img>
+        ></Image>
       </button>
     </section>
   );
