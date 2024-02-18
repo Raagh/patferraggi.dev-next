@@ -1,7 +1,8 @@
-import { getAllPosts, getPostBySlug } from '@/lib/blog';
+import { getAllPosts, getPageNumbers, getPostBySlug } from '@/lib/blog';
 import BlogList from '@/components/blog/blog-list';
 import { isArray } from 'util';
 import BlogPost from '@/components/blog/blog-post';
+import { GetStaticPaths } from 'next';
 
 export default function Blog({
   posts,
@@ -32,24 +33,28 @@ export default function Blog({
   );
 }
 
-// export async function getStaticPaths() {
-//   const { numPages } = getPageNumbers();
-//
-//   const arr = Array.from({ length: numPages }, (_, i) => (i + 1).toString());
-//
-//   return {
-//     paths: arr.map(x => {
-//       return {
-//         params: {
-//           pageNumber: x.toString()
-//         },
-//       };
-//     }),
-//     fallback: false,
-//   };
-//Name }
+export const getStaticPaths = (async () => {
+  const { posts, numPages } = await getAllPosts();
+  const blogListPages = Array.from({ length: numPages }, (_, i) => (i + 1).toString());
+  const blogPostPages = posts.map((x:any) => x.data.slug);
 
-export const getServerSideProps = async ({ params }: { params: { pageNumber: number | string[] } }) => {
+  const blogPaths = blogListPages.concat(blogPostPages);
+
+  const paths = blogPaths.map(x => {
+    return {
+      params: {
+        pageNumber: x.includes('/') ? x.toString().split('/') : [x.toString()],
+      },
+    };
+  });
+
+  return {
+    paths,
+    fallback: 'blocking',
+  };
+}) satisfies GetStaticPaths;
+
+export const getStaticProps = async ({params}: any) => {
   if (!params.pageNumber) params.pageNumber = 1;
   if (isArray(params.pageNumber) && (params.pageNumber as string[]).includes('assets'))
     return { props: { posts: [], currentPage: 0, pageNumber: 0, isArticle: false } };

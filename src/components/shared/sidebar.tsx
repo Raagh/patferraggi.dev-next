@@ -104,6 +104,8 @@ export default function Sidebar(props: any) {
       >
         <Image
           className={styles.closeButton}
+          width={24}
+          height={24}
           alt="close-button"
           id="close-button"
           src="/assets/landing/close.svg"

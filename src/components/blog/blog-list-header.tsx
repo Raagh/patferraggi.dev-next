@@ -31,7 +31,7 @@ export default function BlogListHeader(props: any) {
             <h3 className={styles.blogListMainArticleTitle}>
               <Link
                 className={styles.styledLinkMainArticle}
-                href={`blog/${mainPost.data.slug}`}
+                href={`${mainPost.data.slug}`}
               >
                 {mainPost.data.title || mainPost.data.slug}
               </Link>
