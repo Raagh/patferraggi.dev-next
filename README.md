@@ -17,9 +17,9 @@ the original blog under [this repository](https://github.com/Raagh/patferraggi.d
 - Mailing list support using [Mailchimp](https://mailchimp.com/)
 
 # MISSING
-- [] Generate blog posts as static content
-- [] Add RSS Feed
+- [X] Generate blog posts as static content
 - [] Check mailchimp
+- [] Add RSS Feed
 
 ## Deploy Status
 

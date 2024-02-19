@@ -115,7 +115,7 @@ export default function NewsLetter(props: any) {
           <article className={styles.text}>Nada de spam, solo los últimos artículos una vez al mes.</article>
           <form className={styles.inputContainer}>
             <input
-              className={styles.input}
+              className={styles.maxWidthInput}
               type="email"
               placeholder="Tu e-mail acá"
               name="email"
