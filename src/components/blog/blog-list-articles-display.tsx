@@ -15,7 +15,7 @@ export default function BlogListArticlesDisplay(props: any) {
           >
             <Link
               className={styles.styledLink}
-              href={`blog/${data.slug}`}
+              href={`${data.slug}`}
             >
               <Image
                 className={styles.styledImage}
