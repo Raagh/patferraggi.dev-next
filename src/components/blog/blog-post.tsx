@@ -7,7 +7,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import Bio from './bio';
 import NewsLetter from './newsletter';
-import { CommentCount, DiscussionEmbed } from 'disqus-react';
+import { DiscussionEmbed } from 'disqus-react';
 import Layout from '@/layouts/layout';
 import styles from '@/styles/blog/blogPost.module.css';
 import Markdown from 'react-markdown';

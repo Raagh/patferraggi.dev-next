@@ -36,7 +36,7 @@ export default function Blog({
 export const getStaticPaths = (async () => {
   const { posts, numPages } = await getAllPosts();
   const blogListPages = Array.from({ length: numPages }, (_, i) => (i + 1).toString());
-  const blogPostPages = posts.map((x:any) => x.data.slug);
+  const blogPostPages = posts.map((x: any) => x.data.slug);
 
   const blogPaths = blogListPages.concat(blogPostPages);
 
@@ -54,7 +54,7 @@ export const getStaticPaths = (async () => {
   };
 }) satisfies GetStaticPaths;
 
-export const getStaticProps = async ({params}: any) => {
+export const getStaticProps = async ({ params }: any) => {
   if (!params.pageNumber) params.pageNumber = 1;
   if (isArray(params.pageNumber) && (params.pageNumber as string[]).includes('assets'))
     return { props: { posts: [], currentPage: 0, pageNumber: 0, isArticle: false } };
