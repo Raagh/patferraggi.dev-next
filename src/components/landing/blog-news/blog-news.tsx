@@ -1,5 +1,5 @@
 import IcomoonReact from 'icomoon-react';
-import Article from './blog-news-article';
+import BlogNewsArticle from './blog-news-article';
 import iconSet from '../../../../public/assets/landing/selection.json';
 import styles from '@/styles/landing/blogNews.module.css';
 
@@ -48,7 +48,7 @@ export default function BlogNews({posts}) {
       <section className={styles.blogNewsArticles}>
         {posts.map((post, index) => {
           return (
-            <Article
+            <BlogNewsArticle
               key={index}
               id={index}
               title={post.data.title}
@@ -61,6 +61,7 @@ export default function BlogNews({posts}) {
               enDescription={post.data.enDescription}
               enPostUrl={post.data.enPostUrl}
               thumbnail={post.data.thumbnail}
+              blurPreview={post.data.blurImage}
             />
           );
         })}

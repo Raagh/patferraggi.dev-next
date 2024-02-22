@@ -2,12 +2,27 @@ import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
+import { getPlaiceholder } from 'plaiceholder';
 
 const postsDirectory = join(process.cwd(), '_posts');
 
+export const getBase64 = async (imgPath: string) => {
+  try {
+    const file = fs.readFileSync(`public/${imgPath}`);
+    const { base64 } = await getPlaiceholder(file);
+    return base64;
+  } catch (error: unknown) {
+    //error handling
+    if (error instanceof Error) return error.message;
+    else if (error && typeof error === 'object' && 'message' in error) return error.message as string;
+    else if (typeof error === 'string') return error;
+    else return 'Unexpected error!';
+  }
+};
+
 function getPostSlugs() {
   const years = fs.readdirSync(postsDirectory);
-  const totalSlugs:string[] = [];
+  const totalSlugs: string[] = [];
   for (let i = 0; i < years.length; i++) {
     const year = years[i];
     const months = fs.readdirSync(join(postsDirectory, year));
@@ -32,6 +47,7 @@ export async function getPostBySlug(slugPath: string) {
   const { data, content } = matter(fileContents);
 
   const thumbnail = join('/assets/blog/', slugPath, data.thumbnail);
+  const blurImage = await getBase64(thumbnail);
 
   const processedContent = await remark().process(content);
 
@@ -50,6 +66,7 @@ export async function getPostBySlug(slugPath: string) {
           date: new Date(data.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }),
           rawDate: data.date,
           thumbnail,
+          blurImage,
         },
       })
     ),

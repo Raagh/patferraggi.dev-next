@@ -18,6 +18,8 @@ export default function BlogListArticlesDisplay(props: any) {
               href={`${data.slug}`}
             >
               <Image
+                placeholder='blur'
+                blurDataURL={data.blurImage}
                 className={styles.styledImage}
                 alt="article"
                 src={data.thumbnail}

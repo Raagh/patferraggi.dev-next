@@ -65,6 +65,8 @@ export default function BlogPost({ post, posts }) {
           <article className={styles.coverContent}>
             <div className={styles.styledCover}>
               <Image
+                placeholder="blur"
+                blurDataURL={post.data.blurImage}
                 alt="Cover Image"
                 className={styles.styledCoverImage}
                 width={800}
@@ -166,8 +168,7 @@ export default function BlogPost({ post, posts }) {
           </article>
         </section>
 
-        <NewsLetter enableMargin={true}></NewsLetter> 
-
+        <NewsLetter enableMargin={true}></NewsLetter>
       </section>
       {posts.length > 0 && <p className={styles.blogPostShowcaseWrapperTitle}>Más artículos</p>}
 

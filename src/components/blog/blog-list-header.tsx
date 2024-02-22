@@ -53,6 +53,8 @@ export default function BlogListHeader(props: any) {
           ></Link>
           <div className={styles.styledImageContainer}>
             <Image
+              placeholder="blur"
+              blurDataURL={mainPost.data.blurImage}
               alt="Main Post Image"
               className={styles.styledImage}
               width={800}
