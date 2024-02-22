@@ -1,4 +1,4 @@
-import { getAllPosts, getPageNumbers, getPostBySlug } from '@/lib/blog';
+import { getAllPosts, getPostBySlug } from '@/lib/blog';
 import BlogList from '@/components/blog/blog-list';
 import { isArray } from 'util';
 import BlogPost from '@/components/blog/blog-post';

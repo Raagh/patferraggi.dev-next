@@ -7,8 +7,8 @@ import BlogListArticlesDisplay from '@/components/blog/blog-list-articles-displa
 import { SubscribeModal } from './subscribe-modal';
 
 export default function BlogList({ posts, currentPage, numPages }) {
-  const isFirst = currentPage === 1;
-  const isLast = currentPage === numPages;
+  const isFirst = Number(currentPage) === 1;
+  const isLast = Number(currentPage) === numPages;
   const prevPage = currentPage - 1 === 1 ? '/blog/' : '/blog/' + (currentPage - 1).toString();
   const nextPage = '/blog/' + (Number(currentPage) + 1).toString();
 
