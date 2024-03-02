@@ -24,7 +24,7 @@ export default async function generateRSSFeed(allPosts: any[]) {
       guid: `${site_url}/blog/${post.data.slug}`,
       date: post.data.rawDate,
       enclosure: {
-        url: site_url + '_next/image?url=' + post.data.thumbnail,
+        url: site_url + '_next/image?url=' + post.data.thumbnail + '&w=828&q=75',
       },
       custom_elements: [
         {
