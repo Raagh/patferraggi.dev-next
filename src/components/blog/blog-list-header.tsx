@@ -40,7 +40,7 @@ export default function BlogListHeader(props: any) {
             <div
               className={styles.blogListMainArticleExcerpt}
               dangerouslySetInnerHTML={{
-                __html: mainPost.content.replace(/<[^>]*>?/gm, '').substring(0, 135) + '...',
+                __html: mainPost.data.excerpt,
               }}
             ></div>
             <small className={styles.blogListMainArticleDate}>

@@ -8,6 +8,7 @@ import Gallery from '@/components/landing/gallery';
 import Contact from '@/components/landing/contact';
 import Projects from '@/components/landing/projects/projects';
 import { getAllPosts } from '@/lib/blog';
+import generateRSSFeed from '@/lib/RSSFeed';
 
 export default function Home({ posts }) {
   return (
@@ -50,6 +51,8 @@ Home.getLayout = function getLayout(page: any) {
 
 export const getStaticProps = async () => {
   const { posts } = await getAllPosts();
+
+  await generateRSSFeed(posts);
 
   return { props: { posts: [posts[0], posts[1]] } };
 };

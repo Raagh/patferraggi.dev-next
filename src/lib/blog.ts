@@ -54,6 +54,7 @@ export async function getPostBySlug(slugPath: string) {
   const contentHtml = processedContent.toString();
   const split = slugPath.split('/');
   const id = data.disqusId ?? split[split.length - 1].replace(/\.md$/, '');
+  const excerpt = contentHtml?.replace(/<[^>]*>?/gm, '').substring(0, 135) + '...';
 
   return {
     ...JSON.parse(
@@ -63,6 +64,7 @@ export async function getPostBySlug(slugPath: string) {
           slug: slugPath,
           timeToRead,
           ...data,
+          excerpt,
           date: new Date(data.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }),
           rawDate: data.date,
           thumbnail,
