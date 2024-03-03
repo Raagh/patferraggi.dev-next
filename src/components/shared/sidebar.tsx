@@ -22,6 +22,7 @@ export default function Sidebar(props: any) {
             href="/blog/"
             key="blog"
             className={styles.styledLink}
+            onClick={() => props.setIsOpen(false)}
           >
             blog en <span className={styles.styledLinkText}>*español*</span>
           </Link>
@@ -35,7 +36,7 @@ export default function Sidebar(props: any) {
             <span className={styles.styledLinkText}>dev.to</span> english blog
           </a>
           <Link
-            href="#about"
+            href="/#about"
             key="about"
             onClick={e => props.setIsOpen(false)}
             className={styles.styledLink}
@@ -50,10 +51,10 @@ export default function Sidebar(props: any) {
             about
           </Link>
           <Link
-            href="#projects"
+            href="/#projects"
             key="projects"
-            onClick={e => props.setIsOpen(false)}
             className={styles.styledLink}
+            onClick={() => props.setIsOpen(false)}
           >
             projects
           </Link>

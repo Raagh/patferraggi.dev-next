@@ -2,6 +2,7 @@ import IcomoonReact from 'icomoon-react';
 import BlogNewsArticle from './blog-news-article';
 import iconSet from '../../../../public/assets/landing/selection.json';
 import styles from '@/styles/landing/blogNews.module.css';
+import Link from 'next/link';
 
 export default function BlogNews({posts}) {
   return (
@@ -23,13 +24,13 @@ export default function BlogNews({posts}) {
         <div className={styles.headerExplanation}>
           <p>
             ¿En Español?{' '}
-            <a
+            <Link
               className={styles.styledHeaderLink}
               href="/blog"
               rel="noopener noreferrer"
             >
               Por aquí.
-            </a>
+            </Link>
           </p>
           <p>
             Or find me on{' '}
