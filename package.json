@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@integreat-app/react-sticky-headroom": "^1.2.3",
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "disqus-react": "^1.1.5",
     "gray-matter": "^4.0.3",
     "icomoon-react": "^3.0.0",
@@ -29,6 +30,7 @@
     "sharp": "0.32.6"
   },
   "devDependencies": {
+    "@types/mailchimp__mailchimp_marketing": "^3.0.19",
     "@types/node": "20.4.6",
     "@types/react": "18.2.18",
     "@types/react-dom": "18.2.7",
