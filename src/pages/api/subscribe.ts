@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import client from '@mailchimp/mailchimp_marketing';
-import { MD5 } from 'crypto-js';
 
 type SubscribeData = {
   email: string;
@@ -23,9 +22,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       server: DATACENTER,
     });
 
-    const response = await client.lists.setListMember(AUDIENCE_ID, MD5(email.toLowerCase()).toString(), {
+    const response = await client.lists.addListMember(AUDIENCE_ID, {
       email_address: email,
-      status_if_new: 'subscribed',
+      status: 'subscribed',
     });
 
     if (Number(response.status) >= 400) {
