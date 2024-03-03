@@ -16,7 +16,7 @@ export default function Blog({
   isArticle: boolean;
 }) {
   return (
-    <div>
+    <>
       {!isArticle ? (
         <BlogList
           posts={posts}
@@ -29,7 +29,7 @@ export default function Blog({
           posts={[]}
         />
       )}
-    </div>
+    </>
   );
 }
 

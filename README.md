@@ -19,7 +19,7 @@ the original blog under [this repository](https://github.com/Raagh/patferraggi.d
 # MISSING
 - [X] Generate blog posts as static content
 - [X] Add RSS Feed
-- [] Check mailchimp
+- [X] Check mailchimp
 
 ## Deploy Status
 

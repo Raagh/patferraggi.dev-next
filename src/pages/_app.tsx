@@ -1,15 +1,11 @@
 import '@/styles/globals.css';
 import { NextPage } from 'next';
-import {NextSeo} from "next-seo";
+import { NextSeo } from 'next-seo';
 import { AppProps } from 'next/app';
-import { ReactElement, ReactNode } from 'react';
-
-type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode;
-};
+import Layout from '@/layouts/layout';
 
 type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
+  Component: NextPage;
 };
 
 const meta = {
@@ -20,8 +16,6 @@ const meta = {
 };
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
-  const getLayout = Component.getLayout ?? (page => page);
-
   return (
     <>
       <NextSeo
@@ -34,7 +28,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
           description: meta.description,
           images: [
             {
-              url: "../../../../public/assets/landing/images/2020.jpg",
+              url: '../../../../public/assets/landing/images/2020.jpg',
               width: 800,
               height: 420,
               alt: meta.title,
@@ -47,7 +41,10 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
           cardType: 'summary_large_image',
         }}
       />
-      {getLayout(<Component {...pageProps} />)}
+      <Layout removeSidePadding={pageProps.isArticle ?? false}>
+        <></>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 };

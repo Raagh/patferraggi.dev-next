@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import Layout from '../../layouts/layout';
 import styles from '@/styles/blog/index.module.css';
 import BlogListTemplateHeader from '@/components/blog/blog-list-header';
 import BlogListArticlesDisplay from '@/components/blog/blog-list-articles-display';
@@ -15,7 +14,7 @@ export default function BlogList({ posts, currentPage, numPages }) {
   const [mainPost, ...restOfPosts] = posts;
 
   return (
-    <Layout>
+    <>
       <Head>
         <title>El Calabozo del Programador</title>
         <meta
@@ -71,6 +70,6 @@ export default function BlogList({ posts, currentPage, numPages }) {
         ← Back to my website
       </Link>
       {currentPage === 1 && <SubscribeModal></SubscribeModal>}
-    </Layout>
+    </>
   );
 }

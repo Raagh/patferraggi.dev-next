@@ -8,7 +8,6 @@ import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import Bio from './bio';
 import NewsLetter from './newsletter';
 import { DiscussionEmbed } from 'disqus-react';
-import Layout from '@/layouts/layout';
 import styles from '@/styles/blog/blogPost.module.css';
 import Markdown from 'react-markdown';
 import { useEffect, useMemo } from 'react';
@@ -28,7 +27,7 @@ export default function BlogPost({ post, posts }) {
     document.head.appendChild(s);
   }, []);
   return (
-    <Layout removeSidePadding={true}>
+    <>
       <section className={styles.articleWrapper}>
         <Head>
           <title>{post.title}</title>
@@ -182,6 +181,6 @@ export default function BlogPost({ post, posts }) {
       >
         ← Back to my blog
       </Link>
-    </Layout>
+    </>
   );
 }
