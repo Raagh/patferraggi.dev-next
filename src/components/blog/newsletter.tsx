@@ -8,7 +8,7 @@ export default function NewsLetter(props: any) {
   const [buttonText, setButtonText] = useState('Enviar');
 
   const addToMailchimp = async (_: any) => {
-    await fetch('/api/subscribeUser', {
+    await fetch('/api/subscribe', {
       body: JSON.stringify({
         email,
       }),
