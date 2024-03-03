@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import styles from '@/styles/landing/project.module.css';
-import projectRydoo from '../../../../public/assets/landing/images/project-rydoo.png';
 
 export default function Project(props: any) {
   return (
@@ -26,7 +25,7 @@ export default function Project(props: any) {
       </article>
       <Image
         className={styles.projectWrapperImage}
-        src={projectRydoo}
+        src={props.image}
         width={800}
         height={800}
         alt="project-example"

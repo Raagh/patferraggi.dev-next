@@ -3,9 +3,12 @@ import Project from './project';
 import IcomoonReact from 'icomoon-react';
 import iconSet from '../../../../public/assets/landing/selection.json';
 import styles from '@/styles/landing/project.module.css';
+import { StaticImageData } from 'next/image';
+import projectRydoo from '../../../../public/assets/landing/images/project-rydoo.png';
 
-//TODO: update projects
-const projects = [
+type Project = {name: string, skills: string[], image: StaticImageData}
+
+const projects: Project[] = [
   {
     name: 'Rydoo',
     skills: [
@@ -19,8 +22,10 @@ const projects = [
       'SQL Server',
       'SASS',
     ],
+    image : projectRydoo,
   },
 ];
+
 
 export default function Projects() {
   return (
@@ -28,24 +33,27 @@ export default function Projects() {
       className={styles.projectsWrapper}
       id="projects"
     >
-      <p className={styles.projectsWrapperText}>
-        Some examples of my work{' '}
-        {
-          <IcomoonReact
-            iconSet={iconSet}
-            size={'1em'}
-            icon="heart"
-          />
-        }{' '}
-      </p>
-      {projects.map(project => {
+      {projects.length > 0 && (
+        <p className={styles.projectsWrapperText}>
+          Some examples of my work{' '}
+          {
+            <IcomoonReact
+              iconSet={iconSet}
+              size={'1em'}
+              icon="heart"
+            />
+          }{' '}
+        </p>
+      )}
+      {projects.map((project: Project) => {
         const projectIndex = projects.indexOf(project);
 
         return (
           <Project
             key={projectIndex}
-            name={project.name}
-            skills={project.skills}
+            name={project?.name}
+            skills={project?.skills}
+            image={project.image}
           />
         );
       })}

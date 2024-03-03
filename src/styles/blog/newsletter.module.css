@@ -66,6 +66,21 @@
   }
 }
 
+.maxWidthButton {
+  background: var(--secondary-color);
+  padding: 0 0.5rem 0 0.5rem;
+  height: 60px;
+  font-size: 24px;
+  line-height: 64px;
+  color: var(--primary-color);
+  text-align: center;
+  border: none;
+
+  @media (max-width: 720px) {
+    width: 100%;
+  }
+}
+
 .container {
   padding: 3rem 4rem 3rem 4rem;
   font-family: var(--font-family-medium);

@@ -122,7 +122,7 @@ export default function NewsLetter(props: any) {
               value={email}
               onChange={handleEmailChange}
             ></input>
-            <button className={styles.button}>{buttonText}</button>
+            <button className={styles.maxWidthButton}>{buttonText}</button>
           </form>
         </section>
       )}
