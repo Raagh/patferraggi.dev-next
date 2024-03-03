@@ -16,10 +16,13 @@ the original blog under [this repository](https://github.com/Raagh/patferraggi.d
 - Comments support using [Disqus](https://disqus.com/)
 - Mailing list support using [Mailchimp](https://mailchimp.com/)
 
-# MISSING
-- [X] Generate blog posts as static content
-- [X] Add RSS Feed
-- [X] Check mailchimp
+# Whats next?
+- [] Fix sidebar animation
+- [] Update pictures
+- [] Update projects
+- [] Update bio
+- [] Bring blog back to life (maybe)
+- [] Add Admin page (maybe)
 
 ## Deploy Status
 

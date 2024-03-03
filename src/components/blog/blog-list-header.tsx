@@ -49,7 +49,7 @@ export default function BlogListHeader(props: any) {
           </div>
           <Link
             className={styles.styledLinkMainArticle}
-            href={`blog${mainPost.data.slug}`}
+            href={`blog/${mainPost.data.slug}`}
           ></Link>
           <div className={styles.styledImageContainer}>
             <Image

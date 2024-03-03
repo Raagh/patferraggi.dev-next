@@ -52,15 +52,13 @@ export default function BlogList({ posts, currentPage, numPages }) {
           </button>
         )}
         {!isLast && (
-          <button className={styles.styledButton}>
-            <Link
-              className={styles.styledDirectionButton}
-              href={nextPage}
-              rel="next"
-            >
-              Siguiente →
-            </Link>
-          </button>
+          <Link
+            className={styles.styledDirectionButton}
+            href={nextPage}
+            rel="next"
+          >
+            <button className={styles.styledButton}>Siguiente →</button>
+          </Link>
         )}
       </ul>
       <Link

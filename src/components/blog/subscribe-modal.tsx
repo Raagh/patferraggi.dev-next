@@ -34,7 +34,7 @@ const disableScrollingIfModalOpen = (isOpen: boolean) => {
 export function SubscribeModal() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [wasModalOpenAlready, setModalOpenAlready] = useState(false);
-  // const modalCloseTimeout = 300
+
   disableScrollingIfModalOpen(isModalOpen);
 
   if (!wasModalOpenAlready) {
@@ -53,7 +53,6 @@ export function SubscribeModal() {
       onRequestClose={closeModal}
       style={customStyles}
       contentLabel="Modal"
-      // closeTimeoutMS={modalCloseTimeout}
     >
       <NewsLetter
         enableMargin={false}

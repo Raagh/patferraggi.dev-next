@@ -19,6 +19,7 @@
   line-height: 28px;
   font-family: var(--font-family-medium);
   letter-spacing: -1px;
+  cursor: pointer;
 }
 
 .backNextButtons {
