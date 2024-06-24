@@ -30,7 +30,7 @@ export default function BlogPost({ post, posts }) {
     <>
       <section className={styles.articleWrapper}>
         <Head>
-          <title>{post.title}</title>
+          <title>{post.data.title}</title>
           <meta
             name="description"
             content="Personal Website and Blog"
