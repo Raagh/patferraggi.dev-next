@@ -5,7 +5,10 @@ import styles from '@/styles/landing/intro.module.css';
 
 export default function Intro() {
   return (
-    <section id="intro" className={styles.introWrapper}>
+    <section
+      id="intro"
+      className={styles.introWrapper}
+    >
       <p>
         I'm an Argentinian software developer, currently based in Spain.{' '}
         {
@@ -23,7 +26,7 @@ export default function Intro() {
             icon="cup"
           />
         }
-        , user centric solutions, but also muay thai, travelling and my cat.
+        , user centric solutions, but also muay thai, travelling and spending time with my beautiful wife.
       </p>
     </section>
   );
