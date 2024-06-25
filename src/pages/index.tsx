@@ -8,25 +8,15 @@ import Contact from '@/components/landing/contact';
 import Projects from '@/components/landing/projects/projects';
 import { getAllPosts } from '@/lib/blog';
 import generateRSSFeed from '@/lib/RSSFeed';
+import SEO from '@/components/shared/seo';
 
 export default function Home({ posts }) {
   return (
     <>
-      <Head>
-        <title>Patricio Ferraggi Ares</title>
-        <meta
-          name="description"
-          content="Personal Website and Blog"
-        />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1"
-        />
-        <link
-          rel="icon"
-          href="/favicon.ico"
-        />
-      </Head>
+      <SEO
+        title="Patricio Ferraggi Ares"
+        description="Personal Website and Blog"
+      ></SEO>
       <Intro />
       <Divider />
       <BlogNews posts={posts} />

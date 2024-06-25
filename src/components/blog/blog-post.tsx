@@ -11,6 +11,7 @@ import { DiscussionEmbed } from 'disqus-react';
 import styles from '@/styles/blog/blogPost.module.css';
 import Markdown from 'react-markdown';
 import { useEffect, useMemo } from 'react';
+import SEO from '../shared/seo';
 
 export default function BlogPost({ post, posts }) {
   const disqusConfig = useMemo(() => {
@@ -29,21 +30,12 @@ export default function BlogPost({ post, posts }) {
   return (
     <>
       <section className={styles.articleWrapper}>
-        <Head>
-          <title>{post.data.title}</title>
-          <meta
-            name="description"
-            content="Personal Website and Blog"
-          />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1"
-          />
-          <link
-            rel="icon"
-            href="/favicon.ico"
-          />
-        </Head>
+        <SEO
+          title={post.data.title}
+          description={post.data.description}
+          url={post.data.url}
+          thumbnail={post.data.thumbnail}
+        ></SEO>
         <Link
           className={styles.styledHomeLink}
           href="/blog"

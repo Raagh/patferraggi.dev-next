@@ -4,6 +4,7 @@ import styles from '@/styles/blog/index.module.css';
 import BlogListTemplateHeader from '@/components/blog/blog-list-header';
 import BlogListArticlesDisplay from '@/components/blog/blog-list-articles-display';
 import { SubscribeModal } from './subscribe-modal';
+import SEO from '../shared/seo';
 
 export default function BlogList({ posts, currentPage, numPages }) {
   const isFirst = Number(currentPage) === 1;
@@ -15,21 +16,10 @@ export default function BlogList({ posts, currentPage, numPages }) {
 
   return (
     <>
-      <Head>
-        <title>El Calabozo del Programador</title>
-        <meta
-          name="description"
-          content="Personal Website and Blog"
-        />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1"
-        />
-        <link
-          rel="icon"
-          href="/favicon.ico"
-        />
-      </Head>
+      <SEO
+        title="El Calabozo del Programador"
+        description="Personal Website and Blog"
+      ></SEO>
       <section className={styles.blogListTemplateWrapper}>
         <BlogListTemplateHeader
           mainPost={mainPost}
