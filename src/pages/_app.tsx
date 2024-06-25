@@ -36,7 +36,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
         }}
         twitter={{
           handle: meta.twitter,
-          site: 'https://patferraggi.dev',
+          site: meta.url,
           cardType: 'summary_large_image',
         }}
       />
