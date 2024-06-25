@@ -8,14 +8,13 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPage;
 };
 
-const meta = {
-  title: `Patricio Ferraggi Ares`,
-  description: `Personal Website and Blog`,
-  url: 'https://www.patferraggi.dev',
-  twitter: `patferraggi`,
-};
-
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
+  const meta = pageProps.meta;
+  if (!meta) {
+    return <></>;
+  }
+
+  console.log(meta);
   return (
     <>
       <NextSeo
@@ -28,7 +27,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
           description: meta.description,
           images: [
             {
-              url: '../../../../public/assets/landing/images/2020.jpg',
+              url: meta.thumbnail,
               width: 800,
               height: 420,
               alt: meta.title,
@@ -37,7 +36,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
         }}
         twitter={{
           handle: meta.twitter,
-          site: meta.twitter,
+          site: 'https://patferraggi.dev',
           cardType: 'summary_large_image',
         }}
       />

@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Head from 'next/head';
 import Image from 'next/image';
 import Divider from '../shared/divider';
 import BlogListArticlesDisplay from './blog-list-articles-display';
@@ -11,7 +10,6 @@ import { DiscussionEmbed } from 'disqus-react';
 import styles from '@/styles/blog/blogPost.module.css';
 import Markdown from 'react-markdown';
 import { useEffect, useMemo } from 'react';
-import SEO from '../shared/seo';
 
 export default function BlogPost({ post, posts }) {
   const disqusConfig = useMemo(() => {
@@ -30,12 +28,6 @@ export default function BlogPost({ post, posts }) {
   return (
     <>
       <section className={styles.articleWrapper}>
-        <SEO
-          title={post.data.title}
-          description={post.data.description}
-          url={post.data.url}
-          thumbnail={post.data.thumbnail}
-        ></SEO>
         <Link
           className={styles.styledHomeLink}
           href="/blog"

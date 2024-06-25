@@ -57,17 +57,48 @@ export const getStaticPaths = (async () => {
 export const getStaticProps = async ({ params }: any) => {
   if (!params.pageNumber) params.pageNumber = 1;
   if (isArray(params.pageNumber) && (params.pageNumber as string[]).includes('assets'))
-    return { props: { posts: [], currentPage: 0, pageNumber: 0, isArticle: false } };
+    return {
+      props: {
+        posts: [],
+        currentPage: 0,
+        pageNumber: 0,
+        isArticle: false,
+        meta: {
+          title: 'El Calabozo del Programador',
+          description: 'Blog',
+          thumbnail: 'https://patferraggi.dev/assets/landing/images/2020.jpg',
+        },
+      },
+    };
 
   const isArticle = isArray(params.pageNumber) && params.pageNumber.length > 1;
   if (isArticle) {
     const post = await getPostBySlug((params.pageNumber as string[]).filter(x => x !== 'blog').join('/'));
-    return { props: { posts: [post], currentPage: 0, pageNumber: 0, isArticle } };
+
+    if (!post) return;
+    const meta = {
+      title: post.data.title,
+      description: post.data.description ?? '',
+      url: post.data.url ?? '',
+      thumbnail: `https://patferraggi.dev${post.data.thumbnail}`,
+    };
+
+    return { props: { posts: [post], currentPage: 0, pageNumber: 0, isArticle, meta: meta } };
   }
 
   const { posts, numPages } = await getAllPosts((params.pageNumber as number) ?? 1);
 
   return {
-    props: { posts, currentPage: params.pageNumber ?? 1, numPages, isArticle },
+    props: {
+      posts,
+      currentPage: params.pageNumber ?? 1,
+      numPages,
+      isArticle,
+      meta: {
+        title: 'El Calabozo del Programador',
+        description: 'Blog',
+        thumbnail: 'https://patferraggi.dev/assets/landing/images/2020.jpg',
+      },
+    },
   };
 };
